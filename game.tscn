@@ -42,12 +42,13 @@ position = Vector2( 858, 151 )
 
 [node name="Door" parent="Entities" instance=ExtResource( 5 )]
 position = Vector2( 656, 450 )
+door_id = "players_office"
 
 [node name="Door2" parent="Entities" instance=ExtResource( 5 )]
 position = Vector2( -1819, 450 )
 
 [node name="Player" parent="Entities" instance=ExtResource( 1 )]
-position = Vector2( 7, 152 )
+position = Vector2( 173, 539 )
 
 [node name="Enemy" parent="Entities" instance=ExtResource( 4 )]
 position = Vector2( -1890, 1118 )

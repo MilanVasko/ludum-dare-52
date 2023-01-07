@@ -1,0 +1,35 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://hud/popup/popup_panel.gd" type="Script" id=1]
+
+[node name="Popup" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="PopupDialog" type="PopupDialog" parent="." groups=["door_subscriber"]]
+visible = true
+anchor_left = 0.25
+anchor_right = 0.75
+anchor_bottom = 0.25
+margin_right = 1.0
+margin_bottom = 1.0
+script = ExtResource( 1 )
+timer_path = NodePath("../PopupTimer")
+
+[node name="PlayersOffice" type="Label" parent="PopupDialog"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = 20.0
+margin_right = -20.0
+margin_bottom = -20.0
+text = "\"Room 245, H. R. Vest\"
+
+That's my office.
+I have the keys... inside."
+align = 1
+valign = 1
+
+[node name="PopupTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true

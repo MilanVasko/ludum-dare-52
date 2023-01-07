@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://hud/action_possible/action_possible.gd" type="Script" id=1]
+
+[node name="ActionPossible" type="Label" groups=["usable_object_subscriber"]]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -160.0
+margin_top = -50.0
+margin_right = -10.0
+margin_bottom = -10.0
+text = "Press E to use"
+align = 1
+valign = 1
+script = ExtResource( 1 )
