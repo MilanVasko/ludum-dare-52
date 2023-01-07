@@ -1,0 +1,33 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://hud/stamina.gd" type="Script" id=1]
+
+[node name="HUD" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Stamina" type="HBoxContainer" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = -50.0
+margin_right = 310.0
+margin_bottom = -10.0
+
+[node name="Label" type="Label" parent="Stamina"]
+margin_right = 98.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Stamina"
+align = 1
+valign = 1
+
+[node name="Stamina" type="ProgressBar" parent="Stamina" groups=["stamina_subscriber"]]
+margin_left = 102.0
+margin_right = 300.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+script = ExtResource( 1 )

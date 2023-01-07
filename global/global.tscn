@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://global/global.gd" type="Script" id=1]
+
+[node name="Global" type="Node"]
+script = ExtResource( 1 )
+player_walk_speed = 200.0
+player_run_speed = 350.0
+player_stamina_in_seconds = 5.0
+player_stamina_regenerate_cooldown = 2.0
