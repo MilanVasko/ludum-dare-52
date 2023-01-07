@@ -5,8 +5,10 @@ onready var next_or_close := $NextOrClose
 var current_dialogue: Control = null
 
 func _on_dialogue_start(dialogue_id: String) -> void:
-	if dialogue_id == "start":
-		show_dialogue(dialogues.get_node("Start"))
+	if dialogue_id == "level1/start":
+		show_dialogue(dialogues.get_node("Level1Start"))
+	elif dialogue_id == "level1/blood_area":
+		show_dialogue(dialogues.get_node("Level1BloodArea"))
 	else:
 		print("Unknown dialogue ID: ", dialogue_id)
 

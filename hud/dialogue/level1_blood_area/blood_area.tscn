@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://hud/dialogue/specific_dialogue.gd" type="Script" id=1]
+
+[node name="Level1BloodArea" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="Label" type="Label" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "Hm, are those Greg's shoes?
+I wonder where he went."
+align = 1
+valign = 1
+
+[node name="Label2" type="Label" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "Oh, what a mess!
+I won't be cleaning this shit again!"
+align = 1
+valign = 1
+
+[node name="Label3" type="Label" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "I swear I'm going to kill him the next time I see him."
+align = 1
+valign = 1
