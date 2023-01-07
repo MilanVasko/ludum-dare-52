@@ -10,6 +10,7 @@ func _ready() -> void:
 	$AnimationPlayer.play("rest")
 
 func _physics_process(_delta: float) -> void:
+	# TODO: do this in a better way
 	points = get_node("/root/Game/Navigation2D").get_simple_path(global_position, get_node("/root/Game/Entities/Player").global_position, true)
 	if points.size() > 1:
 		var distance = points[1] - global_position

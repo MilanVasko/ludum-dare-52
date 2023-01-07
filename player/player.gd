@@ -13,7 +13,7 @@ func _physics_process(delta: float) -> void:
 
 	var speed := Global.player_walk_speed
 	var wants_to_run := Input.is_action_pressed("run")
-	if wants_to_run:
+	if wants_to_run && !direction.is_equal_approx(Vector2.ZERO):
 		stamina = drain_stamina(stamina, delta)
 		if stamina <= 0.0:
 			stamina = 0.0

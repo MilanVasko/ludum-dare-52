@@ -7,3 +7,8 @@ export(float) var player_stamina_regenerate_cooldown: float
 
 func _ready() -> void:
 	randomize()
+
+func show_just_one(children: Array, which: CanvasItem) -> void:
+	for child in children:
+		child.hide()
+	which.show()
