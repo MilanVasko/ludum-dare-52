@@ -3,9 +3,10 @@
 [ext_resource path="res://map/tileset.tres" type="TileSet" id=1]
 
 [node name="Map" type="TileMap"]
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 0.25, 0.25 )
 tile_set = ExtResource( 1 )
-cell_size = Vector2( 148, 148 )
-cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_size = Vector2( 150, 150 )
+cell_custom_transform = Transform2D( 150, 0, 0, 150, 0, 0 )
+bake_navigation = true
 format = 1
 tile_data = PoolIntArray( -131076, 0, 0, -131075, 0, 0, -131074, 0, 0, -131073, 0, 0, -196608, 0, 0, -196607, 0, 0, -196606, 0, 0, -196605, 0, 0, -65540, 0, 0, -131069, 0, 0, -4, 0, 0, -65533, 0, 0, 65532, 0, 0, 3, 0, 0, 131068, 0, 0, 65539, 0, 0, 196604, 0, 0, 131075, 0, 0, 262140, 0, 0, 262141, 0, 0, 262142, 0, 0, 262143, 0, 0, 196608, 0, 0, 196609, 0, 0, 196610, 0, 0, 196611, 0, 0 )
