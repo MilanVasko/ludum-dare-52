@@ -5,12 +5,14 @@ const COLS := 3
 
 onready var grid_container := $Container/GridContainer
 var empty_index: int
+var initializing := true
 var already_solved := false
 signal puzzle_solved
 
 func _ready() -> void:
 	hide()
 
+	initializing = true
 	empty_index = -1
 	var focus_grabbed := false
 	for i in range(grid_container.get_child_count()):
@@ -26,6 +28,7 @@ func _ready() -> void:
 	assert(focus_grabbed)
 
 	shuffle()
+	initializing = false
 
 func _on_keypad_puzzle_start() -> void:
 	get_tree().paused = true
@@ -41,7 +44,7 @@ func _on_key_pressed(index: int) -> void:
 func is_solved() -> bool:
 	if !is_empty(0):
 		return false
-	for i in range(1, get_child_count()):
+	for i in range(1, grid_container.get_child_count()):
 		if grid_container.get_child(i).number != i + 1:
 			return false
 	return true
@@ -97,7 +100,7 @@ func swap(neighbour_index: int, empty_index_: int) -> void:
 	grid_container.move_child(neighbour, empty_index_)
 	grid_container.move_child(empty, neighbour_index)
 	empty_index = neighbour_index
-	if is_solved() && !already_solved:
+	if !initializing && is_solved() && !already_solved:
 		already_solved = true
 		emit_signal("puzzle_solved")
 
