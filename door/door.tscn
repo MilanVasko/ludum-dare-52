@@ -10,7 +10,7 @@ extents = Vector2( 56, 91.5 )
 
 [node name="Door" type="KinematicBody2D"]
 script = ExtResource( 1 )
-locked = true
+locked_with = "ungettable_key"
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 0, -91.6 )

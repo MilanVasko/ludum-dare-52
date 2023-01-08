@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+var door_keys := {}
+
 var stamina: float
 var stamina_regenerate_cooldown: float
 
@@ -7,6 +9,12 @@ func _ready() -> void:
 	stamina = Global.player_stamina_in_seconds
 	stamina_regenerate_cooldown = Global.player_stamina_regenerate_cooldown
 	get_tree().call_group("stamina_subscriber", "_on_stamina_changed", stamina)
+
+func has_door_key(door_key: String) -> bool:
+	return door_keys.has(door_key)
+
+func take_key(door_key: String) -> void:
+	door_keys[door_key] = true
 
 func _physics_process(delta: float) -> void:
 	var direction := Input.get_vector("left", "right", "up", "down")

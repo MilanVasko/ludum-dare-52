@@ -110,6 +110,7 @@ func swap(neighbour_index: int, empty_index_: int) -> void:
 	empty_index = neighbour_index
 	if !initializing && is_solved() && !already_solved:
 		already_solved = true
+		_on_close_pressed()
 		emit_signal("puzzle_solved")
 
 func go_up(index: int) -> int:

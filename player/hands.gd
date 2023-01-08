@@ -8,8 +8,9 @@ func _process(_delta: float) -> void:
 	if close_usable_object == null || !Input.is_action_just_pressed("use"):
 		return
 
-	close_usable_object._use(player)
-	if !can_use(close_usable_object):
+	if can_use(close_usable_object):
+		close_usable_object._use(player)
+	else:
 		_on_object_exited(close_usable_object)
 
 func _on_object_entered(obj: Node) -> void:
