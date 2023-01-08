@@ -30,14 +30,14 @@ I have the keys... inside."
 align = 1
 valign = 1
 
-[node name="ElevatorOpened" type="Label" parent="PopupDialog"]
+[node name="PowerOn" type="Label" parent="PopupDialog"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 20.0
 margin_top = 20.0
 margin_right = -20.0
 margin_bottom = -20.0
-text = "I heard an elevator open..."
+text = "The power should be on now."
 align = 1
 valign = 1
 
@@ -71,6 +71,17 @@ margin_top = 20.0
 margin_right = -20.0
 margin_bottom = -20.0
 text = "There's a key inside!"
+align = 1
+valign = 1
+
+[node name="ElevatorSwitchDisabled" type="Label" parent="PopupDialog"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = 20.0
+margin_right = -20.0
+margin_bottom = -20.0
+text = "Of course, the elevator switch doesn't work!"
 align = 1
 valign = 1
 

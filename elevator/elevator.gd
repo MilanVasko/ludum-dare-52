@@ -2,6 +2,12 @@ extends Node2D
 
 export(String) var level_to_load: String
 
+func _ready() -> void:
+	$WorkingLight.visible = false
+
+func _on_plug_power() -> void:
+	$WorkingLight.visible = true
+
 func _on_elevator_open() -> void:
 	$DoorBottom.queue_free()
 	$DoorTop.queue_free()

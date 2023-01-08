@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://hud/hud.tscn" type="PackedScene" id=1]
 [ext_resource path="res://door/door.tscn" type="PackedScene" id=2]
@@ -14,10 +14,11 @@
 [ext_resource path="res://levels/level1/blood_area/blood_area.tscn" type="PackedScene" id=12]
 [ext_resource path="res://levels/level1/keypad_puzzle/keypad_locker/keypad_locker.tscn" type="PackedScene" id=13]
 [ext_resource path="res://elevator/elevator.tscn" type="PackedScene" id=14]
-[ext_resource path="res://elevator_opener/elevator_opener.tscn" type="PackedScene" id=15]
+[ext_resource path="res://power_on_switch/power_on_switch.tscn" type="PackedScene" id=15]
 [ext_resource path="res://light/light.png" type="Texture" id=16]
 [ext_resource path="res://light/faulty_light.tscn" type="PackedScene" id=17]
 [ext_resource path="res://light/working_light.tscn" type="PackedScene" id=18]
+[ext_resource path="res://elevator_switch/elevator_switch.tscn" type="PackedScene" id=19]
 
 [sub_resource type="GDScript" id=3]
 script/source = "extends CanvasLayer
@@ -93,7 +94,7 @@ locked_with = "level1/door_to_elevator_key"
 locked_popup_id = "level1/door_to_elevator_locked"
 
 [node name="Player" parent="Entities" instance=ExtResource( 4 )]
-position = Vector2( 787, -535 )
+position = Vector2( 1666, -495 )
 
 [node name="Enemy" parent="Entities" instance=ExtResource( 7 )]
 position = Vector2( -1848, 1122 )
@@ -141,13 +142,17 @@ position = Vector2( -1141, 561 )
 position = Vector2( -1266, 575 )
 scale = Vector2( 20.8663, 21.4014 )
 
-[node name="ElevatorOpener" parent="Entities" instance=ExtResource( 15 )]
+[node name="PowerOn" parent="Entities" instance=ExtResource( 15 )]
 position = Vector2( 1703, -1243 )
-popup_id = "level1/elevator_opened"
+popup_id = "level1/power_on"
 
 [node name="KeypadLocker" parent="Entities" instance=ExtResource( 13 )]
 position = Vector2( 599, -993 )
 door_key_id = "level1/door_to_elevator_key"
+
+[node name="ElevatorSwitch" parent="Entities" instance=ExtResource( 19 )]
+position = Vector2( 1957, -649 )
+switch_disabled_popup_id = "level1/elevator_switch_disabled"
 
 [node name="Lights" type="Node" parent="."]
 
@@ -206,17 +211,14 @@ scale = Vector2( 0.703125, 0.65332 )
 
 [node name="WorkingLight" parent="Lights/SecondCorridor" instance=ExtResource( 18 )]
 position = Vector2( 1654, -502 )
-color = Color( 1, 0.984314, 0.913725, 1 )
 
 [node name="WorkingLight3" parent="Lights/SecondCorridor" instance=ExtResource( 18 )]
 position = Vector2( 993, -468 )
-color = Color( 1, 0.984314, 0.913725, 1 )
 
 [node name="JanitorRoom" type="Node" parent="Lights"]
 
 [node name="WorkingLight3" parent="Lights/JanitorRoom" instance=ExtResource( 18 )]
 position = Vector2( 807, -929 )
-color = Color( 1, 0.984314, 0.913725, 1 )
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="Lights/JanitorRoom"]
 occluder = SubResource( 4 )
@@ -225,7 +227,6 @@ occluder = SubResource( 4 )
 
 [node name="WorkingLight" parent="Lights/ElevatorOpenRoom" instance=ExtResource( 18 )]
 position = Vector2( 1703, -1017 )
-color = Color( 1, 0.984314, 0.913725, 1 )
 shadow_enabled = true
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="Lights/ElevatorOpenRoom"]
