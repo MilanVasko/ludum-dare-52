@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://hud/dialogue/dialogue.gd" type="Script" id=1]
 [ext_resource path="res://hud/dialogue/level1_start/start.tscn" type="PackedScene" id=2]
 [ext_resource path="res://hud/dialogue/level1_blood_area/blood_area.tscn" type="PackedScene" id=3]
+[ext_resource path="res://hud/dialogue/ending_greg/ending_greg.tscn" type="PackedScene" id=4]
 
 [node name="Dialogue" type="Panel" groups=["dialogue_subscriber"]]
 anchor_right = 1.0
@@ -20,6 +21,8 @@ margin_bottom = -80.0
 [node name="Level1Start" parent="Dialogues" instance=ExtResource( 2 )]
 
 [node name="Level1BloodArea" parent="Dialogues" instance=ExtResource( 3 )]
+
+[node name="EndingGreg" parent="Dialogues" instance=ExtResource( 4 )]
 
 [node name="NextOrClose" type="Button" parent="."]
 pause_mode = 2

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/greg.png-36e89ae04821f47c653d715f3685156c.stex"
+path="res://.import/greg.png-fa260aa1f2d344e790e8046ce59d9201.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://greg.png"
-dest_files=[ "res://.import/greg.png-36e89ae04821f47c653d715f3685156c.stex" ]
+source_file="res://greg/greg.png"
+dest_files=[ "res://.import/greg.png-fa260aa1f2d344e790e8046ce59d9201.stex" ]
 
 [params]
 

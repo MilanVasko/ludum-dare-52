@@ -12,6 +12,8 @@ func _on_dialogue_start(dialogue_id: String) -> void:
 		show_dialogue(dialogues.get_node("Level1Start"))
 	elif dialogue_id == "level1/blood_area":
 		show_dialogue(dialogues.get_node("Level1BloodArea"))
+	elif dialogue_id == "ending/greg":
+		show_dialogue(dialogues.get_node("EndingGreg"))
 	else:
 		print("Unknown dialogue ID: ", dialogue_id)
 

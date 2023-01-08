@@ -1,9 +1,16 @@
 extends Node2D
 
 export(String) var level_to_load: String
+export(bool) var is_power_on_at_start: bool
+export(bool) var is_open_at_start: bool
 
 func _ready() -> void:
-	$WorkingLight.visible = false
+	if level_to_load == "":
+		$Panel.already_used = true
+	if !is_power_on_at_start:
+		$WorkingLight.visible = false
+	if is_open_at_start:
+		_on_elevator_open()
 
 func _on_plug_power() -> void:
 	$WorkingLight.visible = true
