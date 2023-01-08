@@ -9,4 +9,6 @@ player_run_speed = 350.0
 player_stamina_in_seconds = 5.0
 player_stamina_regenerate_cooldown = 2.0
 enemy_player_follow_delay = 1.0
+enemy_wait_time = 2.0
 enemy_run_speed = 190.0
+enemy_walk_speed = 50.0
