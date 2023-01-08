@@ -30,4 +30,6 @@ func _on_next_or_close_pressed() -> void:
 	if !current_dialogue.show_next():
 		hide()
 		get_tree().paused = false
+		if current_dialogue.has_method("_on_dialogue_end"):
+			current_dialogue._on_dialogue_end()
 	next_or_close.text = current_dialogue.get_label()
