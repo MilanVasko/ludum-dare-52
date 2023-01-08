@@ -4,13 +4,13 @@
 [ext_resource path="res://levels/level1/keypad_puzzle/keypad_puzzle.gd" type="Script" id=2]
 
 [node name="KeypadPuzzle" type="Panel" groups=["keypad_puzzle"]]
+pause_mode = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 2 )
 steps_to_shuffle = 15
 
 [node name="Container" type="VBoxContainer" parent="."]
-pause_mode = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
 

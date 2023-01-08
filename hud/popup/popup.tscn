@@ -41,6 +41,28 @@ text = "I heard an elevator open..."
 align = 1
 valign = 1
 
+[node name="LockedDoor" type="Label" parent="PopupDialog"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = 20.0
+margin_right = -20.0
+margin_bottom = -20.0
+text = "Locked. Of course."
+align = 1
+valign = 1
+
+[node name="DoorToElevatorLocked" type="Label" parent="PopupDialog"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = 20.0
+margin_right = -20.0
+margin_bottom = -20.0
+text = "Locked. I'm sure there's a key for this somewhere!"
+align = 1
+valign = 1
+
 [node name="PopupTimer" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true

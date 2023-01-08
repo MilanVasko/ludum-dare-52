@@ -30,9 +30,17 @@ func _ready() -> void:
 	shuffle()
 	initializing = false
 
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action("ui_cancel"):
+		_on_close_pressed()
+
 func _on_keypad_puzzle_start() -> void:
 	get_tree().paused = true
 	show()
+	for i in range(grid_container.get_child_count()):
+		if !is_empty(i):
+			grid_container.get_child(i).grab_focus()
+			break
 
 func _on_close_pressed():
 	get_tree().paused = false

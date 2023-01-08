@@ -1,5 +1,10 @@
 extends Node2D
 
+var already_solved := false
+
+func _can_use() -> bool:
+	return !already_solved
+
 func _use(_caller: Node2D) -> void:
 	start_keypad_puzzle()
 
@@ -13,4 +18,5 @@ func start_keypad_puzzle() -> void:
 		assert(err == OK)
 
 func _on_puzzle_solved() -> void:
-	print("Yay!")
+	already_solved = true
+	print("Yay! I got the key!")

@@ -55,15 +55,20 @@ position = Vector2( -23, 59 )
 [node name="Table4" parent="Entities" instance=ExtResource( 5 )]
 position = Vector2( 858, 151 )
 
-[node name="Door" parent="Entities" instance=ExtResource( 2 )]
+[node name="PlayersOfficeDoor" parent="Entities" instance=ExtResource( 2 )]
 position = Vector2( 656, 450 )
-door_id = "players_office"
+locked_popup_id = "level1/players_office"
 
-[node name="Door2" parent="Entities" instance=ExtResource( 2 )]
+[node name="DoorAboveMrWheat" parent="Entities" instance=ExtResource( 2 )]
 position = Vector2( -1819, 450 )
+locked_popup_id = "locked_door"
+
+[node name="DoorToElevator" parent="Entities" instance=ExtResource( 2 )]
+position = Vector2( 1668.85, -562.5 )
+locked_popup_id = "level1/door_to_elevator_locked"
 
 [node name="Player" parent="Entities" instance=ExtResource( 4 )]
-position = Vector2( 1667, -813 )
+position = Vector2( 799, -896 )
 
 [node name="Enemy" parent="Entities" instance=ExtResource( 7 )]
 position = Vector2( -1848, 1122 )
@@ -113,7 +118,7 @@ scale = Vector2( 20.8663, 21.4014 )
 
 [node name="ElevatorOpener" parent="Entities" instance=ExtResource( 15 )]
 position = Vector2( 1703, -1243 )
-popup_id = "elevator_opened"
+popup_id = "level1/elevator_opened"
 
 [node name="KeypadLocker" parent="Entities" instance=ExtResource( 13 )]
 position = Vector2( 599, -993 )
