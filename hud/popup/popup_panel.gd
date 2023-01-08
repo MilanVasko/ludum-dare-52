@@ -16,6 +16,8 @@ func _on_popup_show(popup_id: String) -> void:
 		Global.show_just_one(get_children(), $KeypadLockerKeyFound)
 	elif popup_id == "level1/elevator_switch_disabled":
 		Global.show_just_one(get_children(), $ElevatorSwitchDisabled)
+	elif popup_id == "level1/exit_from_first_corridor":
+		Global.show_just_one(get_children(), $ExitFromFirstCorridor)
 	else:
 		print("Unknown popup ID: ", popup_id)
 		return

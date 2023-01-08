@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://hud/hud.tscn" type="PackedScene" id=1]
 [ext_resource path="res://door/door.tscn" type="PackedScene" id=2]
@@ -19,6 +19,8 @@
 [ext_resource path="res://light/faulty_light.tscn" type="PackedScene" id=17]
 [ext_resource path="res://light/working_light.tscn" type="PackedScene" id=18]
 [ext_resource path="res://elevator_switch/elevator_switch.tscn" type="PackedScene" id=19]
+[ext_resource path="res://levels/level1/lab_area/lab_area.tscn" type="PackedScene" id=20]
+[ext_resource path="res://levels/level1/mr_wheat_area/mr_wheat_area.tscn" type="PackedScene" id=21]
 
 [sub_resource type="GDScript" id=3]
 script/source = "extends CanvasLayer
@@ -84,6 +86,10 @@ position = Vector2( 858, 151 )
 position = Vector2( 656, 450 )
 locked_popup_id = "level1/players_office"
 
+[node name="ExitFromFirstCorridor" parent="Entities" instance=ExtResource( 2 )]
+position = Vector2( 1331, 450 )
+locked_popup_id = "level1/exit_from_first_corridor"
+
 [node name="DoorAboveMrWheat" parent="Entities" instance=ExtResource( 2 )]
 position = Vector2( -1819, 450 )
 locked_popup_id = "locked_door"
@@ -94,10 +100,18 @@ locked_with = "level1/door_to_elevator_key"
 locked_popup_id = "level1/door_to_elevator_locked"
 
 [node name="Player" parent="Entities" instance=ExtResource( 4 )]
-position = Vector2( 225, 29 )
+position = Vector2( 92, 7 )
 
 [node name="Enemy" parent="Entities" instance=ExtResource( 7 )]
 position = Vector2( -1848, 1122 )
+
+[node name="MrWheatArea" parent="Entities" instance=ExtResource( 21 )]
+position = Vector2( -1818, 1103 )
+scale = Vector2( 24.6473, 16.1945 )
+
+[node name="LabArea" parent="Entities" instance=ExtResource( 20 )]
+position = Vector2( -557, 554 )
+scale = Vector2( 7.07684, 18.7075 )
 
 [node name="Blood" type="Node2D" parent="Entities"]
 z_index = -1

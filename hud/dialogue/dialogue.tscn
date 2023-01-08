@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://hud/dialogue/dialogue.gd" type="Script" id=1]
 [ext_resource path="res://hud/dialogue/level1_start/start.tscn" type="PackedScene" id=2]
 [ext_resource path="res://hud/dialogue/level1_blood_area/blood_area.tscn" type="PackedScene" id=3]
 [ext_resource path="res://hud/dialogue/ending_greg/ending_greg.tscn" type="PackedScene" id=4]
+[ext_resource path="res://hud/dialogue/level1_lab_area/level1_lab_area.tscn" type="PackedScene" id=5]
+[ext_resource path="res://hud/dialogue/level1_mr_wheat_area/level1_mr_wheat_area.tscn" type="PackedScene" id=6]
 
 [node name="Dialogue" type="Panel" groups=["dialogue_subscriber"]]
 anchor_right = 1.0
@@ -23,6 +25,10 @@ margin_bottom = -80.0
 [node name="Level1BloodArea" parent="Dialogues" instance=ExtResource( 3 )]
 
 [node name="EndingGreg" parent="Dialogues" instance=ExtResource( 4 )]
+
+[node name="Level1LabArea" parent="Dialogues" instance=ExtResource( 5 )]
+
+[node name="Level1MrWheatArea" parent="Dialogues" instance=ExtResource( 6 )]
 
 [node name="NextOrClose" type="Button" parent="."]
 pause_mode = 2

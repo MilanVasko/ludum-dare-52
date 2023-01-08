@@ -5,6 +5,7 @@ export(float) var player_run_speed: float
 export(float) var player_stamina_in_seconds: float
 export(float) var player_stamina_regenerate_cooldown: float
 export(float) var enemy_player_follow_delay: float
+export(float) var enemy_run_speed: float
 
 # such as tables
 var SEE_THROUGH_LAYER = 0b10

@@ -889,7 +889,9 @@ tracks/35/keys = {
 [sub_resource type="CircleShape2D" id=3]
 radius = 9.43398
 
-[node name="Enemy" type="KinematicBody2D"]
+[node name="Enemy" type="KinematicBody2D" groups=["enemy"]]
+collision_layer = 2
+collision_mask = 2
 script = ExtResource( 13 )
 
 [node name="Root" type="Position2D" parent="."]

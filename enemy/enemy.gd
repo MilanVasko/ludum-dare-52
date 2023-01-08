@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-export(float) var speed := 190.0
+export(bool) var is_activated: bool
 onready var last_known_player_position := global_position
 
 const threshold := 1.5
@@ -11,6 +11,9 @@ var ray := Vector2.ZERO
 
 func _ready() -> void:
 	$AnimationPlayer.play("rest")
+
+func _activate() -> void:
+	is_activated = true
 
 # TODO: find these in a better way
 func find_navigation() -> Node:
@@ -26,6 +29,9 @@ func can_see_player() -> bool:
 	return Global.is_any_parent_in_group(result["collider"], "player")
 
 func _physics_process(delta: float) -> void:
+	if !is_activated:
+		return
+
 	var player_node := find_player()
 	if can_see_player():
 		last_known_player_position = player_node.global_position
@@ -39,7 +45,7 @@ func _physics_process(delta: float) -> void:
 		var distance = points[1] - global_position
 		var direction = distance.normalized()
 		if distance.length() > threshold || points.size() > 2:
-			var _ignored := move_and_slide(direction * speed)
+			var _ignored := move_and_slide(direction * Global.enemy_run_speed)
 		else:
 			var _ignored := move_and_slide(Vector2(0, 0))
 		update()

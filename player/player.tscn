@@ -26,6 +26,7 @@ player_path = NodePath("..")
 shape = SubResource( 2 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 0, -61 )
 current = true
 
 [node name="Background" type="Sprite" parent="Camera2D"]

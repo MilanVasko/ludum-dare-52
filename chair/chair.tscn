@@ -6,6 +6,7 @@
 extents = Vector2( 33.5, 81 )
 
 [node name="Chair" type="StaticBody2D"]
+collision_layer = 2
 
 [node name="Sprite" type="Sprite" parent="."]
 scale = Vector2( 0.25, 0.25 )
