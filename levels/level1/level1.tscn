@@ -90,7 +90,7 @@ locked_popup_id = "locked_door"
 
 [node name="DoorToElevator" parent="Entities" instance=ExtResource( 2 )]
 position = Vector2( 1668.85, -562.5 )
-locked_with = "level1/door_to_elevator_key"
+locked_with = ""
 locked_popup_id = "level1/door_to_elevator_locked"
 
 [node name="Player" parent="Entities" instance=ExtResource( 4 )]
