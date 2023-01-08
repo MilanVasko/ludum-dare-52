@@ -2,13 +2,25 @@ extends KinematicBody2D
 
 var door_keys := {}
 
+var health: float
 var stamina: float
 var stamina_regenerate_cooldown: float
 
 func _ready() -> void:
+	health = Global.player_health
 	stamina = Global.player_stamina_in_seconds
 	stamina_regenerate_cooldown = Global.player_stamina_regenerate_cooldown
 	get_tree().call_group("stamina_subscriber", "_on_stamina_changed", stamina)
+	get_tree().call_group("health_subscriber", "_on_health_changed", health)
+
+func _hurt(amount: float) -> void:
+	health -= amount
+	get_tree().call_group("health_subscriber", "_on_health_changed", health)
+	if health <= 0.0:
+		die()
+
+func die() -> void:
+	get_tree().call_group("health_subscriber", "_on_player_died")
 
 func has_door_key(door_key: String) -> bool:
 	return door_keys.has(door_key)
