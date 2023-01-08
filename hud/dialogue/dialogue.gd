@@ -4,6 +4,9 @@ onready var dialogues := $Dialogues
 onready var next_or_close := $NextOrClose
 var current_dialogue: Control = null
 
+func _ready() -> void:
+	hide()
+
 func _on_dialogue_start(dialogue_id: String) -> void:
 	if dialogue_id == "level1/start":
 		show_dialogue(dialogues.get_node("Level1Start"))
