@@ -1,4 +1,5 @@
 extends Button
 
 func _on_play_again_pressed() -> void:
-	get_tree().reload_current_scene()
+	var err := get_tree().reload_current_scene()
+	assert(err == OK)
