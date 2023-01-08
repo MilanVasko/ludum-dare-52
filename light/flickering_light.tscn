@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://light/flickering_light.gd" type="Script" id=1]
+[ext_resource path="res://light/light.png" type="Texture" id=2]
+
+[node name="FlickeringLight" type="Light2D"]
+texture = ExtResource( 2 )
+script = ExtResource( 1 )
+colors = [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+min_threshold_time = 0.05
+max_threshold_time = 0.35

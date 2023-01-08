@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://light/light.png" type="Texture" id=1]
+
+[node name="WorkingLight" type="Light2D"]
+texture = ExtResource( 1 )
+color = Color( 1, 0.984314, 0.913725, 1 )
+shadow_filter = 2
