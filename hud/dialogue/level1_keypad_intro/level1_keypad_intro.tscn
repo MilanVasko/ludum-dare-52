@@ -1,15 +1,15 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://hud/dialogue/level1_mr_wheat_area/level1_mr_wheat_area.gd" type="Script" id=1]
+[ext_resource path="res://hud/dialogue/level1_keypad_intro/level1_keypad_intro.gd" type="Script" id=1]
 [ext_resource path="res://hud/dialogue/label/label.tscn" type="PackedScene" id=2]
 
-[node name="Level1MrWheatArea" type="Control"]
+[node name="Level1KeypadIntro" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
 
 [node name="Label" parent="." instance=ExtResource( 2 )]
-text = "Wow! Hello, mutated wheat. I mean... don't take it personally, but I'll probably..."
+text = "Yes! That’s the locker with the backup keys."
 
 [node name="Label2" parent="." instance=ExtResource( 2 )]
-text = "RUN! *squeal*"
+text = "And somebody shuffled all the keys on the keypad. What a day!"

@@ -3,6 +3,7 @@
 [ext_resource path="res://hud/popup/popup_panel.gd" type="Script" id=1]
 
 [node name="Popup" type="Control"]
+pause_mode = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
 
@@ -23,10 +24,9 @@ margin_left = 20.0
 margin_top = 20.0
 margin_right = -20.0
 margin_bottom = -20.0
-text = "\"Room 245, H. R. Vest\"
+text = "\"Room 245, H. R. Vest\" - That's my office.
 
-That's my office.
-I have the keys... inside."
+The door is locked. I have the keys. On the desk. Inside."
 align = 1
 valign = 1
 
@@ -59,7 +59,7 @@ margin_left = 20.0
 margin_top = 20.0
 margin_right = -20.0
 margin_bottom = -20.0
-text = "Locked. I'm sure there's a key for this somewhere!"
+text = "The elevator control room. Locked, as usual."
 align = 1
 valign = 1
 
@@ -81,7 +81,7 @@ margin_left = 20.0
 margin_top = 20.0
 margin_right = -20.0
 margin_bottom = -20.0
-text = "Of course, the elevator switch doesn't work!"
+text = "I need to get to the elevator control room to make this switch work again..."
 align = 1
 valign = 1
 

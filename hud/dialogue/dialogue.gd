@@ -16,6 +16,12 @@ func _on_dialogue_start(dialogue_id: String) -> void:
 		show_dialogue(dialogues.get_node("Level1LabArea"))
 	elif dialogue_id == "level1/mr_wheat_area":
 		show_dialogue(dialogues.get_node("Level1MrWheatArea"))
+	elif dialogue_id == "level1/elevator_switch_disabled_init":
+		show_dialogue(dialogues.get_node("Level1ElevatorSwitchDisabledInit"))
+	elif dialogue_id == "level1/keypad_intro":
+		show_dialogue(dialogues.get_node("Level1KeypadIntro"))
+	elif dialogue_id == "level1/players_office_intro":
+		show_dialogue(dialogues.get_node("Level1PlayersOfficeIntro"))
 	elif dialogue_id == "ending/greg":
 		show_dialogue(dialogues.get_node("EndingGreg"))
 	else:

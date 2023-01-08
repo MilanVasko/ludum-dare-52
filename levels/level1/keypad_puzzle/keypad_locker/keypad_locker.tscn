@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 35.5, 131.5 )
 
-[node name="KeypadLocker" type="StaticBody2D"]
+[node name="KeypadLocker" type="StaticBody2D" groups=["keypad_locker"]]
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]

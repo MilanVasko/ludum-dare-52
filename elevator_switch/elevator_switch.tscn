@@ -8,7 +8,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 15, 31.5 )
 
-[node name="ElevatorSwitch" type="Area2D" groups=["power_subscriber"]]
+[node name="ElevatorSwitch" type="Area2D" groups=["elevator_switch", "power_subscriber"]]
 script = ExtResource( 1 )
 
 [node name="ElevatorSwitchDisabled" type="Sprite" parent="."]

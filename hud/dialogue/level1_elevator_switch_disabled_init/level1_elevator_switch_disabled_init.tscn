@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://hud/dialogue/level1_elevator_switch_disabled_init/level1_elevator_switch_disabled_init.gd" type="Script" id=1]
+[ext_resource path="res://hud/dialogue/label/label.tscn" type="PackedScene" id=2]
+
+[node name="Level1ElevatorSwitchDisabledInit" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="Label" parent="." instance=ExtResource( 2 )]
+text = "I better get out of this place."
+
+[node name="Label2" parent="." instance=ExtResource( 2 )]
+text = "The power to the elevator went out again. Just great."
+
+[node name="Label3" parent="." instance=ExtResource( 2 )]
+text = "I need to get inside the elevator control room."
