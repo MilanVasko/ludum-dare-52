@@ -6,7 +6,7 @@
 anchor_right = 1.0
 anchor_bottom = 1.0
 
-[node name="PopupDialog" type="PopupDialog" parent="." groups=["door_subscriber"]]
+[node name="PopupDialog" type="PopupDialog" parent="." groups=["popup_subscriber"]]
 visible = true
 anchor_left = 0.25
 anchor_right = 0.75
@@ -27,6 +27,17 @@ text = "\"Room 245, H. R. Vest\"
 
 That's my office.
 I have the keys... inside."
+align = 1
+valign = 1
+
+[node name="ElevatorOpened" type="Label" parent="PopupDialog"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = 20.0
+margin_right = -20.0
+margin_bottom = -20.0
+text = "I heard an elevator open..."
 align = 1
 valign = 1
 
