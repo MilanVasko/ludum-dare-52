@@ -34,5 +34,6 @@ func start_keypad_puzzle(caller: Node2D) -> void:
 
 func _on_puzzle_solved(caller: Node2D) -> void:
 	already_solved = true
+	$OpeningSqueak.play()
 	caller.take_key(door_key_id)
 	get_tree().call_group("popup_subscriber", "_on_popup_show", "level1/keypad_locker_key_found")

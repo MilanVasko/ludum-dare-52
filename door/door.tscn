@@ -1,9 +1,12 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://door/door.gd" type="Script" id=1]
 [ext_resource path="res://door/door1.png" type="Texture" id=2]
 [ext_resource path="res://random_texture.gd" type="Script" id=3]
 [ext_resource path="res://door/door2.png" type="Texture" id=4]
+[ext_resource path="res://door/locked.wav" type="AudioStream" id=5]
+[ext_resource path="res://door/locked2.wav" type="AudioStream" id=6]
+[ext_resource path="res://door/opened.wav" type="AudioStream" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 56, 91.5 )
@@ -23,3 +26,18 @@ possible_textures = [ ExtResource( 2 ), ExtResource( 4 ) ]
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, -91.5 )
 shape = SubResource( 1 )
+
+[node name="Locked" type="AudioStreamPlayer2D" parent="."]
+pause_mode = 2
+stream = ExtResource( 5 )
+bus = "LockedDoor"
+
+[node name="Locked2" type="AudioStreamPlayer2D" parent="."]
+pause_mode = 2
+stream = ExtResource( 6 )
+bus = "LockedDoor"
+
+[node name="Opened" type="AudioStreamPlayer2D" parent="."]
+pause_mode = 2
+stream = ExtResource( 7 )
+bus = "DoorOpened"
