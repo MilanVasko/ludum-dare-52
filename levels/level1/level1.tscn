@@ -372,7 +372,7 @@ position = Vector2( -1818.95, 1265.82 )
 [node name="WendingMachine" parent="Entities" instance=ExtResource( 27 )]
 position = Vector2( 616.8, -505 )
 
-[node name="HallFloor" type="Node" parent="Entities"]
+[node name="HallFloor" type="Node2D" parent="Entities"]
 
 [node name="Papers" parent="Entities/HallFloor" instance=ExtResource( 31 )]
 position = Vector2( 1533.16, 638.385 )
@@ -387,6 +387,7 @@ position = Vector2( -1330.68, 845.766 )
 
 [node name="Display" parent="Entities/LabFurnitureOver/Furniture9" instance=ExtResource( 43 )]
 position = Vector2( -23.3201, -40.7657 )
+z_index = 1
 
 [node name="Furniture8" parent="Entities/LabFurnitureOver" instance=ExtResource( 47 )]
 position = Vector2( -1330.68, 901 )
