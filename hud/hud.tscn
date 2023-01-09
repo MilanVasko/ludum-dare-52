@@ -84,11 +84,13 @@ mouse_filter = 2
 [node name="KeypadPuzzle" parent="KeypadPuzzle" instance=ExtResource( 5 )]
 
 [node name="Popup" parent="." instance=ExtResource( 4 )]
+mouse_filter = 2
 
 [node name="Control" type="Control" parent="."]
 anchor_left = 0.25
 anchor_top = 0.25
 anchor_right = 0.75
 anchor_bottom = 0.75
+mouse_filter = 2
 
 [node name="GameOver" parent="Control" instance=ExtResource( 7 )]
