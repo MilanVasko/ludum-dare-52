@@ -14,7 +14,3 @@ func _use(_called: Node) -> void:
 	power.get_node("Off").visible = false
 	power.get_node("On").visible = true
 	$Noise.play()
-
-func _on_noise_finished() -> void:
-	print("Hi")
-	$Noise.play(0.5)
