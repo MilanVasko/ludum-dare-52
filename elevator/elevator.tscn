@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://elevator/elevator.gd" type="Script" id=1]
 [ext_resource path="res://elevator/parts/room.tres" type="Texture" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://elevator/door_top/door_top.tscn" type="PackedScene" id=4]
 [ext_resource path="res://elevator/panel.gd" type="Script" id=5]
 [ext_resource path="res://light/working_light.tscn" type="PackedScene" id=6]
+[ext_resource path="res://elevator/beep.wav" type="AudioStream" id=7]
+[ext_resource path="res://elevator/door.wav" type="AudioStream" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 43.75, 42.25 )
@@ -41,5 +43,14 @@ occluder = SubResource( 2 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PoolVector2Array( -209, -63, -184, -62, -184, -80, 178, -80, 181, 223, -180, 222, -183, 70, -209, 70, -207, 248, 210, 249, 208, -248, -209, -246 )
+
+[node name="Beep" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 7 )
+pitch_scale = 1.08
+bus = "Elevator"
+
+[node name="Doors" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 8 )
+bus = "Sounds"
 
 [connection signal="panel_used" from="Panel" to="." method="_on_panel_used"]

@@ -10,12 +10,17 @@ func _ready() -> void:
 	if !is_power_on_at_start:
 		$WorkingLight.visible = false
 	if is_open_at_start:
-		_on_elevator_open()
+		remove_doors()
 
 func _on_plug_power() -> void:
 	$WorkingLight.visible = true
 
 func _on_elevator_open() -> void:
+	$Beep.play()
+	$Doors.play()
+	remove_doors()
+
+func remove_doors() -> void:
 	$DoorBottom.queue_free()
 	$DoorTop.queue_free()
 

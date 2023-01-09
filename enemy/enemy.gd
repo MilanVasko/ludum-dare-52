@@ -8,6 +8,7 @@ enum EnemyState {
 
 export(EnemyState) var state := EnemyState.NOT_ACTIVATED
 onready var last_known_player_position := global_position
+onready var noise := $Noise
 
 const threshold := 1.5
 var player_follow_delay := -1.0
@@ -59,6 +60,8 @@ func _physics_process(delta: float) -> void:
 func chase_player(delta: float) -> void:
 	var player_node := find_player()
 	if can_see_player():
+		if !noise.playing:
+			noise.play()
 		last_known_player_position = player_node.global_position
 		player_follow_delay = Global.enemy_player_follow_delay
 		wait_time = Global.enemy_wait_time

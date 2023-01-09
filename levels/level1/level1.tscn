@@ -146,7 +146,7 @@ locked_with = "level1/door_to_elevator_key"
 locked_popup_id = "level1/door_to_elevator_locked"
 
 [node name="Player" parent="Entities" instance=ExtResource( 4 )]
-position = Vector2( 95, 6 )
+position = Vector2( -1813, 566 )
 
 [node name="Enemy" parent="Entities" instance=ExtResource( 7 )]
 position = Vector2( -1848, 1122 )
