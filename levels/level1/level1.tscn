@@ -126,6 +126,9 @@ position = Vector2( -23, 59 )
 [node name="Burner" parent="Entities/Table" instance=ExtResource( 44 )]
 position = Vector2( 0, -101 )
 
+[node name="CollisionShape2D" parent="Entities/Table/Burner" index="1"]
+position = Vector2( -22, 48 )
+
 [node name="DoorPlayersOffice" parent="Entities" instance=ExtResource( 22 )]
 position = Vector2( 656, 450 )
 locked_popup_id = "level1/players_office"
@@ -263,6 +266,7 @@ position = Vector2( -771.337, 86.0672 )
 position = Vector2( -1246.5, 70 )
 
 [node name="KitchenFurniture" type="Node2D" parent="Entities"]
+z_index = -1
 
 [node name="WendingMachine" parent="Entities/KitchenFurniture" instance=ExtResource( 27 )]
 position = Vector2( -281.04, -184.907 )
@@ -280,7 +284,7 @@ position = Vector2( 131.5, -220.313 )
 position = Vector2( 242.99, -220.313 )
 
 [node name="Furniture2" parent="Entities/KitchenFurniture" instance=ExtResource( 23 )]
-position = Vector2( 355.236, -220.052 )
+position = Vector2( 355.236, -220.313 )
 
 [node name="Books" parent="Entities/KitchenFurniture" instance=ExtResource( 33 )]
 position = Vector2( -4.35736, -345.611 )
@@ -475,3 +479,5 @@ occluder = SubResource( 5 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color( 0.0588235, 0.0588235, 0.0588235, 1 )
+
+[editable path="Entities/Table/Burner"]

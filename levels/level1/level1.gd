@@ -15,3 +15,4 @@ func _use_burner(burner: Node2D, caller: Node2D) -> void:
 		get_tree().call_group("dialogue_subscriber", "_on_dialogue_start", "level1/burner_intro")
 	else:
 		enemy.scare()
+		burner_used = true

@@ -4,7 +4,7 @@
 [ext_resource path="res://burner/burner.gd" type="Script" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 73.0548
+radius = 36.3456
 
 [node name="Burner" type="Area2D"]
 script = ExtResource( 2 )

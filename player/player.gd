@@ -14,6 +14,7 @@ func _ready() -> void:
 	health_regenerate_cooldown = Global.player_health_regenerate_cooldown
 	get_tree().call_group("stamina_subscriber", "_on_stamina_changed", stamina)
 	get_tree().call_group("health_subscriber", "_on_health_changed", health)
+	Music.register_player(self)
 
 func _hurt(amount: float) -> void:
 	health -= amount

@@ -19,12 +19,16 @@ var ray := Vector2.ZERO
 
 func _ready() -> void:
 	$AnimationPlayer.play("rest")
+	Music.register_enemy(self)
 
 func _activate() -> void:
 	state = EnemyState.NORMAL
 
 func is_activated() -> bool:
 	return state != EnemyState.NOT_ACTIVATED
+
+func is_chasing_us() -> bool:
+	return state == EnemyState.NORMAL
 
 func scare() -> void:
 	state = EnemyState.SCARED
