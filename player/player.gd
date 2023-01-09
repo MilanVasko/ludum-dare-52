@@ -61,6 +61,7 @@ func _physics_process(delta: float) -> void:
 				stamina = Global.player_stamina_in_seconds
 			get_tree().call_group("stamina_subscriber", "_on_stamina_changed", stamina)
 
+	turn(direction)
 	var _ignored := move_and_slide(direction * speed)
 
 func drain_stamina(stamina_: float, delta: float) -> float:
@@ -68,3 +69,54 @@ func drain_stamina(stamina_: float, delta: float) -> float:
 
 func regenerate_stamina(stamina_: float, delta: float) -> float:
 	return stamina_ + delta
+
+func turn(direction: Vector2) -> void:
+	# standing
+	if direction.is_equal_approx(Vector2.ZERO):
+		$AnimationPlayer.play("RESET")
+		if $Front.visible:
+			return
+		$Right.visible = false
+		$Back.visible = false
+		$Front.visible = true
+		return
+
+	# walking
+	$AnimationPlayer.play("Walking")
+	var a = direction.angle()
+
+	# left-down, down, right-down
+	if a < PI && a > 0:
+		if $Front.visible:
+			return
+		$Right.visible = false
+		$Back.visible = false
+		$Front.visible = true
+		return
+
+	# left-up, up, right-up
+	if a > -PI && a < 0:
+		if $Back.visible:
+			return
+		$Front.visible = false
+		$Right.visible = false
+		$Back.visible = true
+		return
+
+	# right
+	if a == 0:
+		if $Right.visible && $Right.scale.x > 0:
+			return
+		$Front.visible = false
+		$Back.visible = false
+		$Right.visible = true
+		$Right.scale.x = abs($Right.scale.x)
+		return
+
+	# left
+	if $Right.visible && $Right.scale.x < 0:
+		return
+	$Front.visible = false
+	$Back.visible = false
+	$Right.visible = true
+	$Right.scale.x = -abs($Right.scale.x)

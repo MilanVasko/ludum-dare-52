@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://player/player.gd" type="Script" id=1]
 [ext_resource path="res://map/white_tile.png" type="Texture" id=2]
@@ -7,7 +7,11 @@
 [ext_resource path="res://player/parts/torso_down.tres" type="Texture" id=5]
 [ext_resource path="res://player/parts/arm.tres" type="Texture" id=6]
 [ext_resource path="res://player/hands.gd" type="Script" id=7]
+[ext_resource path="res://player/parts/torso_right.tres" type="Texture" id=8]
 [ext_resource path="res://player/parts/right_leg_down.tres" type="Texture" id=9]
+[ext_resource path="res://player/parts/right_leg_right.tres" type="Texture" id=10]
+[ext_resource path="res://player/parts/left_leg_up.tres" type="Texture" id=11]
+[ext_resource path="res://player/parts/torso_up.tres" type="Texture" id=12]
 
 [sub_resource type="CircleShape2D" id=2]
 radius = 97.0206
@@ -18,7 +22,7 @@ extents = Vector2( 28, 11.5 )
 [sub_resource type="Animation" id=3]
 length = 0.001
 tracks/0/type = "bezier"
-tracks/0/path = NodePath("Root/LeftLegDown:position:x")
+tracks/0/path = NodePath("Front/LeftLegDown:position:x")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -28,7 +32,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 )
 }
 tracks/1/type = "bezier"
-tracks/1/path = NodePath("Root/LeftLegDown:position:y")
+tracks/1/path = NodePath("Front/LeftLegDown:position:y")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -38,7 +42,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 )
 }
 tracks/2/type = "bezier"
-tracks/2/path = NodePath("Root/LeftLegDown:rotation_degrees")
+tracks/2/path = NodePath("Front/LeftLegDown:rotation_degrees")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -48,7 +52,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 )
 }
 tracks/3/type = "bezier"
-tracks/3/path = NodePath("Root/RightLegDown:position:x")
+tracks/3/path = NodePath("Front/RightLegDown:position:x")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -58,7 +62,7 @@ tracks/3/keys = {
 "times": PoolRealArray( 0 )
 }
 tracks/4/type = "bezier"
-tracks/4/path = NodePath("Root/RightLegDown:position:y")
+tracks/4/path = NodePath("Front/RightLegDown:position:y")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -68,7 +72,7 @@ tracks/4/keys = {
 "times": PoolRealArray( 0 )
 }
 tracks/5/type = "bezier"
-tracks/5/path = NodePath("Root/RightLegDown:rotation_degrees")
+tracks/5/path = NodePath("Front/RightLegDown:rotation_degrees")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -78,7 +82,7 @@ tracks/5/keys = {
 "times": PoolRealArray( 0 )
 }
 tracks/6/type = "bezier"
-tracks/6/path = NodePath("Root:position:x")
+tracks/6/path = NodePath("Front:position:x")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -88,7 +92,7 @@ tracks/6/keys = {
 "times": PoolRealArray( 0 )
 }
 tracks/7/type = "bezier"
-tracks/7/path = NodePath("Root:position:y")
+tracks/7/path = NodePath("Front:position:y")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
@@ -98,7 +102,7 @@ tracks/7/keys = {
 "times": PoolRealArray( 0 )
 }
 tracks/8/type = "bezier"
-tracks/8/path = NodePath("Root:rotation_degrees")
+tracks/8/path = NodePath("Front:rotation_degrees")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/imported = false
@@ -112,7 +116,7 @@ tracks/8/keys = {
 resource_name = "Walking"
 loop = true
 tracks/0/type = "bezier"
-tracks/0/path = NodePath("Root/LeftLegDown:rotation_degrees")
+tracks/0/path = NodePath("Front/LeftLegDown:rotation_degrees")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -122,7 +126,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.5, 1 )
 }
 tracks/1/type = "bezier"
-tracks/1/path = NodePath("Root/RightLegDown:rotation_degrees")
+tracks/1/path = NodePath("Front/RightLegDown:rotation_degrees")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -132,7 +136,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 0.5, 1 )
 }
 tracks/2/type = "bezier"
-tracks/2/path = NodePath("Root/RightLegDown:position:x")
+tracks/2/path = NodePath("Front/RightLegDown:position:x")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -142,7 +146,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0, 0.5, 1 )
 }
 tracks/3/type = "bezier"
-tracks/3/path = NodePath("Root/RightLegDown:position:y")
+tracks/3/path = NodePath("Front/RightLegDown:position:y")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -152,7 +156,7 @@ tracks/3/keys = {
 "times": PoolRealArray( 0, 0.5, 1 )
 }
 tracks/4/type = "bezier"
-tracks/4/path = NodePath("Root/LeftLegDown:position:x")
+tracks/4/path = NodePath("Front/LeftLegDown:position:x")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -162,7 +166,7 @@ tracks/4/keys = {
 "times": PoolRealArray( 0, 0.5, 1 )
 }
 tracks/5/type = "bezier"
-tracks/5/path = NodePath("Root/LeftLegDown:position:y")
+tracks/5/path = NodePath("Front/LeftLegDown:position:y")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -196,31 +200,31 @@ texture = ExtResource( 2 )
 position = Vector2( 0, 0.5 )
 shape = SubResource( 1 )
 
-[node name="Root" type="Position2D" parent="."]
+[node name="Front" type="Position2D" parent="."]
 scale = Vector2( 0.5, 0.5 )
 
-[node name="LeftLegDown" type="Sprite" parent="Root"]
+[node name="LeftLegDown" type="Sprite" parent="Front"]
 position = Vector2( 24.5, -33 )
 texture = ExtResource( 3 )
 __meta__ = {
 "_edit_bone_": true
 }
 
-[node name="RightLegDown" type="Sprite" parent="Root"]
-position = Vector2( -25.1697, -59.6945 )
+[node name="RightLegDown" type="Sprite" parent="Front"]
+position = Vector2( -24.2788, -36.5311 )
 texture = ExtResource( 9 )
 __meta__ = {
 "_edit_bone_": true
 }
 
-[node name="TorsoDown" type="Sprite" parent="Root"]
+[node name="TorsoDown" type="Sprite" parent="Front"]
 position = Vector2( -0.5, -172 )
 texture = ExtResource( 5 )
 __meta__ = {
 "_edit_bone_": true
 }
 
-[node name="RightArm" type="Sprite" parent="Root/TorsoDown"]
+[node name="RightArm" type="Sprite" parent="Front/TorsoDown"]
 position = Vector2( -32.357, 0.284223 )
 rotation = -1.27453
 scale = Vector2( 1, -1 )
@@ -230,7 +234,7 @@ __meta__ = {
 "_edit_bone_": true
 }
 
-[node name="Forearm" type="Sprite" parent="Root/TorsoDown/RightArm"]
+[node name="Forearm" type="Sprite" parent="Front/TorsoDown/RightArm"]
 position = Vector2( -44.0987, -1.20113 )
 rotation = -1.25319
 scale = Vector2( 1, -1 )
@@ -240,17 +244,16 @@ __meta__ = {
 "_edit_bone_": true
 }
 
-[node name="LeftArm" type="Sprite" parent="Root/TorsoDown"]
+[node name="LeftArm" type="Sprite" parent="Front/TorsoDown"]
 position = Vector2( 35.1467, -0.374352 )
 rotation = -1.85761
-scale = Vector2( 1, 1 )
 texture = ExtResource( 6 )
 offset = Vector2( -22.44, 0.526566 )
 __meta__ = {
 "_edit_bone_": true
 }
 
-[node name="Forearm" type="Sprite" parent="Root/TorsoDown/LeftArm"]
+[node name="Forearm" type="Sprite" parent="Front/TorsoDown/LeftArm"]
 position = Vector2( -49.0051, 1.07481 )
 rotation = -1.25319
 scale = Vector2( 1, -1 )
@@ -259,6 +262,52 @@ offset = Vector2( -1.41473, 25.5049 )
 __meta__ = {
 "_edit_bone_": true
 }
+
+[node name="Right" type="Position2D" parent="."]
+visible = false
+scale = Vector2( 0.5, 0.5 )
+
+[node name="LegLeft" type="Sprite" parent="Right"]
+position = Vector2( 19.8915, -29.4366 )
+rotation = -6.28319
+texture = ExtResource( 10 )
+
+[node name="LegRight" type="Sprite" parent="Right"]
+position = Vector2( 11.2151, -29.4366 )
+texture = ExtResource( 10 )
+
+[node name="Torso" type="Sprite" parent="Right"]
+position = Vector2( 3.5, -170.561 )
+texture = ExtResource( 8 )
+
+[node name="Arm" type="Sprite" parent="Right/Torso"]
+position = Vector2( 2.60193, 9.06548 )
+rotation = -1.57603
+scale = Vector2( 1, -1 )
+texture = ExtResource( 6 )
+offset = Vector2( -16.6678, 3.42442 )
+
+[node name="Forearm" type="Sprite" parent="Right/Torso/Arm"]
+position = Vector2( -39.4998, -0.691254 )
+rotation = 1.90415
+texture = ExtResource( 4 )
+offset = Vector2( 0.5, 21.1027 )
+
+[node name="Back" type="Position2D" parent="."]
+visible = false
+scale = Vector2( 0.5, 0.5 )
+
+[node name="LegLeft" type="Sprite" parent="Back"]
+position = Vector2( -20.4625, -32.465 )
+texture = ExtResource( 11 )
+
+[node name="LegRight" type="Sprite" parent="Back"]
+position = Vector2( 23.1916, -32.465 )
+texture = ExtResource( 11 )
+
+[node name="Torso" type="Sprite" parent="Back"]
+position = Vector2( 0, -169.022 )
+texture = ExtResource( 12 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 3 )
