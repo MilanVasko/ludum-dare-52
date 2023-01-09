@@ -1,5 +1,6 @@
 extends KinematicBody2D
 
+onready var footsteps = $Footsteps
 var door_keys := {}
 
 var health: float
@@ -61,8 +62,21 @@ func _physics_process(delta: float) -> void:
 				stamina = Global.player_stamina_in_seconds
 			get_tree().call_group("stamina_subscriber", "_on_stamina_changed", stamina)
 
-	turn(direction)
+	var actual_speed := (direction * speed).length()
+	play_footsteps(actual_speed, delta)
+	turn(actual_speed, direction)
 	var _ignored := move_and_slide(direction * speed)
+
+var footstep_cooldown := 0.0
+
+func play_footsteps(actual_speed: float, delta: float) -> void:
+	if is_zero_approx(actual_speed):
+		footstep_cooldown = 0.0
+		return
+	footstep_cooldown -= delta
+	if footstep_cooldown <= 0.0:
+		footstep_cooldown = 0.5 / (actual_speed / Global.player_walk_speed)
+		footsteps.get_child(randi() % footsteps.get_child_count()).play()
 
 func drain_stamina(stamina_: float, delta: float) -> float:
 	return stamina_ - delta
@@ -70,7 +84,7 @@ func drain_stamina(stamina_: float, delta: float) -> float:
 func regenerate_stamina(stamina_: float, delta: float) -> float:
 	return stamina_ + delta
 
-func turn(direction: Vector2) -> void:
+func turn(actual_speed: float, direction: Vector2) -> void:
 	# standing
 	if direction.is_equal_approx(Vector2.ZERO):
 		$AnimationPlayer.play("RESET")
@@ -82,7 +96,7 @@ func turn(direction: Vector2) -> void:
 		return
 
 	# walking
-	$AnimationPlayer.play("Walking")
+	$AnimationPlayer.play("Walking", -1, actual_speed / Global.player_walk_speed)
 	var a = direction.angle()
 
 	# left-down, down, right-down
