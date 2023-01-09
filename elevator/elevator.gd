@@ -10,7 +10,7 @@ func _ready() -> void:
 	if !is_power_on_at_start:
 		$WorkingLight.visible = false
 	if is_open_at_start:
-		remove_doors()
+		_on_elevator_open()
 
 func _on_plug_power() -> void:
 	$WorkingLight.visible = true
