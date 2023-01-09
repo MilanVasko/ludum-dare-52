@@ -35,7 +35,12 @@ margin_left = 20.0
 margin_top = 20.0
 margin_right = -20.0
 margin_bottom = -80.0
-text = "Congratulations, you've finished the game!"
+text = "Congratulations, you've finished the game!
+
+Created for Ludum Dare 52 Jam by:
+
+Milan Vasko - Programming, sounds and music
+TildeCat - Graphics and level design"
 align = 1
 valign = 1
 
