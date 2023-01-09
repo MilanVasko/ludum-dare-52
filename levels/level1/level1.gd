@@ -1,6 +1,7 @@
 extends Node
 
 func _ready() -> void:
+	$Entities/Player/AnimationPlayer.play("Walking")
 	get_tree().call_group("dialogue_subscriber", "_on_dialogue_start", "level1/start")
 
 var burner_used := false

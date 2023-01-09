@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://player/player.gd" type="Script" id=1]
 [ext_resource path="res://map/white_tile.png" type="Texture" id=2]
@@ -14,6 +14,163 @@ radius = 97.0206
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 28, 11.5 )
+
+[sub_resource type="Animation" id=3]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Root/LeftLegDown:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 24.5, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("Root/LeftLegDown:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( -33, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("Root/LeftLegDown:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath("Root/RightLegDown:position:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( -25.1697, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/4/type = "bezier"
+tracks/4/path = NodePath("Root/RightLegDown:position:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"points": PoolRealArray( -59.6945, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/5/type = "bezier"
+tracks/5/path = NodePath("Root/RightLegDown:rotation_degrees")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/6/type = "bezier"
+tracks/6/path = NodePath("Root:position:x")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/7/type = "bezier"
+tracks/7/path = NodePath("Root:position:y")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/8/type = "bezier"
+tracks/8/path = NodePath("Root:rotation_degrees")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "Walking"
+loop = true
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Root/LeftLegDown:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 1 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("Root/RightLegDown:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 1 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("Root/RightLegDown:position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( -27.8394, -0.25, 0, 0.25, 0, -28.5068, -0.25, 0, 0.25, 0, -29.1742, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 1 )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath("Root/RightLegDown:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( -71.0407, -0.25, 0, 0.25, 0, -40.3394, -0.25, 0, 0.25, 0, -71.0407, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 1 )
+}
+tracks/4/type = "bezier"
+tracks/4/path = NodePath("Root/LeftLegDown:position:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"points": PoolRealArray( 29.1719, -0.25, 0, 0.3, -0.171936, 28.5045, -0.25, 0, 0.25, 0, 29.172, -0.25, 0, 0.1, 0.827999 ),
+"times": PoolRealArray( 0, 0.5, 1 )
+}
+tracks/5/type = "bezier"
+tracks/5/path = NodePath("Root/LeftLegDown:position:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"points": PoolRealArray( -35.0023, -0.25, 0, 0.25, 0, -66.371, -0.25, 0, 0.25, 0, -35.002, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 1 )
+}
 
 [node name="Player" type="KinematicBody2D" groups=["player"]]
 script = ExtResource( 1 )
@@ -45,39 +202,67 @@ scale = Vector2( 0.5, 0.5 )
 [node name="LeftLegDown" type="Sprite" parent="Root"]
 position = Vector2( 24.5, -33 )
 texture = ExtResource( 3 )
+__meta__ = {
+"_edit_bone_": true
+}
 
 [node name="RightLegDown" type="Sprite" parent="Root"]
-position = Vector2( -22.5, -35 )
+position = Vector2( -25.1697, -59.6945 )
 texture = ExtResource( 9 )
+__meta__ = {
+"_edit_bone_": true
+}
 
 [node name="TorsoDown" type="Sprite" parent="Root"]
 position = Vector2( -0.5, -172 )
 texture = ExtResource( 5 )
+__meta__ = {
+"_edit_bone_": true
+}
 
-[node name="RightArm" type="Sprite" parent="Root"]
-position = Vector2( -39.5, -151 )
+[node name="RightArm" type="Sprite" parent="Root/TorsoDown"]
+position = Vector2( -32.357, 0.284223 )
 rotation = -1.27453
 scale = Vector2( 1, -1 )
 texture = ExtResource( 6 )
+offset = Vector2( -21.7527, 0.305553 )
+__meta__ = {
+"_edit_bone_": true
+}
 
-[node name="Forearm" type="Sprite" parent="Root/RightArm"]
-position = Vector2( -21.726, -0.445984 )
+[node name="Forearm" type="Sprite" parent="Root/TorsoDown/RightArm"]
+position = Vector2( -44.0987, -1.20113 )
 rotation = -1.25319
 scale = Vector2( 1, -1 )
 texture = ExtResource( 4 )
 offset = Vector2( -1.41473, 25.5049 )
+__meta__ = {
+"_edit_bone_": true
+}
 
-[node name="LeftArm" type="Sprite" parent="Root"]
-position = Vector2( 41.5, -151 )
+[node name="LeftArm" type="Sprite" parent="Root/TorsoDown"]
+position = Vector2( 35.1467, -0.374352 )
 rotation = -1.85761
+scale = Vector2( 1, 1 )
 texture = ExtResource( 6 )
+offset = Vector2( -22.44, 0.526566 )
+__meta__ = {
+"_edit_bone_": true
+}
 
-[node name="Forearm" type="Sprite" parent="Root/LeftArm"]
-position = Vector2( -21.726, -0.445984 )
+[node name="Forearm" type="Sprite" parent="Root/TorsoDown/LeftArm"]
+position = Vector2( -49.0051, 1.07481 )
 rotation = -1.25319
 scale = Vector2( 1, -1 )
 texture = ExtResource( 4 )
 offset = Vector2( -1.41473, 25.5049 )
+__meta__ = {
+"_edit_bone_": true
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 3 )
+anims/Walking = SubResource( 4 )
 
 [connection signal="area_entered" from="Hands" to="Hands" method="_on_object_entered"]
 [connection signal="area_exited" from="Hands" to="Hands" method="_on_object_exited"]
