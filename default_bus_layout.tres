@@ -10,6 +10,7 @@ spread = 0.38
 resource_name = "PitchShift"
 
 [resource]
+bus/0/volume_db = -7.63485
 bus/1/name = "Sounds"
 bus/1/solo = false
 bus/1/mute = false
@@ -54,7 +55,7 @@ bus/7/name = "Music"
 bus/7/solo = false
 bus/7/mute = false
 bus/7/bypass_fx = false
-bus/7/volume_db = 0.0
+bus/7/volume_db = 4.03575
 bus/7/send = "Sounds Copy 2"
 bus/8/name = "MusicIntense"
 bus/8/solo = false

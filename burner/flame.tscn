@@ -1,0 +1,23 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://random_texture.gd" type="Script" id=1]
+[ext_resource path="res://burner/flames/flame1.tres" type="Texture" id=2]
+[ext_resource path="res://burner/flames/flame2.tres" type="Texture" id=3]
+[ext_resource path="res://burner/flames/flame3.tres" type="Texture" id=4]
+[ext_resource path="res://burner/flame.gd" type="Script" id=5]
+
+[node name="Flame" type="Node2D"]
+script = ExtResource( 5 )
+min_rotation = -7.5
+max_rotation = 7.5
+min_scale = 0.8
+max_scale = 2.0
+min_rotation_speed = 50.0
+max_rotation_speed = 200.0
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0, -7 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 2 )
+script = ExtResource( 1 )
+possible_textures = [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ]

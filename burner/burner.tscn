@@ -1,7 +1,10 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://burner/burner.png" type="Texture" id=1]
 [ext_resource path="res://burner/burner.gd" type="Script" id=2]
+[ext_resource path="res://burner/flame.tscn" type="PackedScene" id=3]
+[ext_resource path="res://light/flickering_light.tscn" type="PackedScene" id=4]
+[ext_resource path="res://hurt_area/hurt_area.tscn" type="PackedScene" id=5]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 36.3456
@@ -15,3 +18,97 @@ texture = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
+
+[node name="Result" type="Node2D" parent="."]
+position = Vector2( -7, 8 )
+scale = Vector2( 1.351, 1.351 )
+
+[node name="HurtArea" parent="Result" instance=ExtResource( 5 )]
+position = Vector2( -13.3235, 91.0437 )
+scale = Vector2( 0.613177, 0.613177 )
+
+[node name="Flame" parent="Result" instance=ExtResource( 3 )]
+position = Vector2( -40.2, 100.8 )
+
+[node name="Flame2" parent="Result" instance=ExtResource( 3 )]
+position = Vector2( -55.2, 110.8 )
+
+[node name="Flame3" parent="Result" instance=ExtResource( 3 )]
+position = Vector2( -31.2, 121.8 )
+
+[node name="Flame4" parent="Result" instance=ExtResource( 3 )]
+position = Vector2( -19.2, 91.8 )
+
+[node name="Flame5" parent="Result" instance=ExtResource( 3 )]
+position = Vector2( -24.2, 101.8 )
+
+[node name="Flame6" parent="Result" instance=ExtResource( 3 )]
+position = Vector2( -36.2, 109.8 )
+
+[node name="Flame7" parent="Result" instance=ExtResource( 3 )]
+position = Vector2( -18.2, 124.8 )
+
+[node name="Flame8" parent="Result" instance=ExtResource( 3 )]
+position = Vector2( -41.2, 82.8 )
+
+[node name="Flame9" parent="Result" instance=ExtResource( 3 )]
+position = Vector2( -48.2, 111.8 )
+
+[node name="Flame10" parent="Result" instance=ExtResource( 3 )]
+position = Vector2( -22.6, 75.4 )
+
+[node name="Flame11" parent="Result" instance=ExtResource( 3 )]
+position = Vector2( -37.6, 85.4 )
+
+[node name="Flame12" parent="Result" instance=ExtResource( 3 )]
+position = Vector2( -13.6, 96.4 )
+
+[node name="Flame13" parent="Result" instance=ExtResource( 3 )]
+position = Vector2( -1.6, 66.4 )
+
+[node name="Flame14" parent="Result" instance=ExtResource( 3 )]
+position = Vector2( -6.6, 76.4 )
+
+[node name="Flame15" parent="Result" instance=ExtResource( 3 )]
+position = Vector2( -9.6225, 84.3819 )
+
+[node name="Flame16" parent="Result" instance=ExtResource( 3 )]
+position = Vector2( -0.599998, 99.4 )
+
+[node name="Flame17" parent="Result" instance=ExtResource( 3 )]
+position = Vector2( -23.6, 57.4 )
+
+[node name="Flame18" parent="Result" instance=ExtResource( 3 )]
+position = Vector2( -30.6, 86.4 )
+
+[node name="Flame19" parent="Result" instance=ExtResource( 3 )]
+position = Vector2( 2.4, 104.4 )
+
+[node name="Flame20" parent="Result" instance=ExtResource( 3 )]
+position = Vector2( -12.6, 114.4 )
+
+[node name="Flame21" parent="Result" instance=ExtResource( 3 )]
+position = Vector2( 11.4, 125.4 )
+
+[node name="Flame22" parent="Result" instance=ExtResource( 3 )]
+position = Vector2( 23.4, 95.4 )
+
+[node name="Flame23" parent="Result" instance=ExtResource( 3 )]
+position = Vector2( 18.4, 105.4 )
+
+[node name="Flame24" parent="Result" instance=ExtResource( 3 )]
+position = Vector2( 6.4, 113.4 )
+
+[node name="Flame25" parent="Result" instance=ExtResource( 3 )]
+position = Vector2( 24.4, 128.4 )
+
+[node name="Flame26" parent="Result" instance=ExtResource( 3 )]
+position = Vector2( 8.88231, 79.9408 )
+
+[node name="Flame27" parent="Result" instance=ExtResource( 3 )]
+position = Vector2( -5.92154, 132.494 )
+
+[node name="FlickeringLight" parent="Result" instance=ExtResource( 4 )]
+position = Vector2( -13.6, 93.4 )
+texture_scale = 0.2
+colors = [ Color( 0.976471, 0.596078, 0, 1 ), Color( 0.8, 0.45098, 0, 1 ) ]

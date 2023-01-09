@@ -8,10 +8,12 @@ var burner_used := false
 func _can_use_burner() -> bool:
 	return !burner_used
 
-func _use_burner(_burner: Node2D, _caller: Node2D) -> void:
+func _use_burner(_burner: Node2D, _caller: Node2D) -> bool:
 	var enemy := $Entities/Enemy
 	if !enemy.is_activated():
 		get_tree().call_group("dialogue_subscriber", "_on_dialogue_start", "level1/burner_intro")
+		return false
 	else:
 		enemy.scare()
 		burner_used = true
+		return true
