@@ -482,6 +482,19 @@ texture = ExtResource( 11 )
 position = Vector2( 23.1916, -32.465 )
 texture = ExtResource( 11 )
 
+[node name="Arm" type="Sprite" parent="Back"]
+position = Vector2( 29.8395, -167.918 )
+rotation = -1.74882
+texture = ExtResource( 6 )
+offset = Vector2( -21.956, 0 )
+
+[node name="Arm2" type="Sprite" parent="Back"]
+position = Vector2( -31.9664, -170.02 )
+rotation = 4.82234
+scale = Vector2( 1, -1 )
+texture = ExtResource( 6 )
+offset = Vector2( -21.956, 0 )
+
 [node name="Torso" type="Sprite" parent="Back"]
 position = Vector2( 0, -169.022 )
 texture = ExtResource( 12 )
