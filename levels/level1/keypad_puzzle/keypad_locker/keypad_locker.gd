@@ -37,3 +37,4 @@ func _on_puzzle_solved(caller: Node2D) -> void:
 	$OpeningSqueak.play()
 	caller.take_key(door_key_id)
 	get_tree().call_group("popup_subscriber", "_on_popup_show", "level1/keypad_locker_key_found")
+	$Open.visible = true
