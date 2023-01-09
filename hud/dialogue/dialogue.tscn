@@ -1,14 +1,12 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://hud/dialogue/dialogue.gd" type="Script" id=1]
-[ext_resource path="res://hud/dialogue/level1_start/level1_start.tscn" type="PackedScene" id=2]
-[ext_resource path="res://hud/dialogue/level1_blood_area/blood_area.tscn" type="PackedScene" id=3]
-[ext_resource path="res://hud/dialogue/ending_greg/ending_greg.tscn" type="PackedScene" id=4]
-[ext_resource path="res://hud/dialogue/level1_lab_area/level1_lab_area.tscn" type="PackedScene" id=5]
-[ext_resource path="res://hud/dialogue/level1_mr_wheat_area/level1_mr_wheat_area.tscn" type="PackedScene" id=6]
-[ext_resource path="res://hud/dialogue/level1_elevator_switch_disabled_init/level1_elevator_switch_disabled_init.tscn" type="PackedScene" id=7]
-[ext_resource path="res://hud/dialogue/level1_keypad_intro/level1_keypad_intro.tscn" type="PackedScene" id=8]
-[ext_resource path="res://hud/dialogue/level1_players_office_intro/level1_players_office_intro.tscn" type="PackedScene" id=9]
+[ext_resource path="res://hud/dialogue/ending_greg/ending_greg.gd" type="Script" id=2]
+[ext_resource path="res://hud/dialogue/level1_elevator_switch_disabled_init/level1_elevator_switch_disabled_init.gd" type="Script" id=3]
+[ext_resource path="res://hud/dialogue/level1_keypad_intro/level1_keypad_intro.gd" type="Script" id=4]
+[ext_resource path="res://hud/dialogue/level1_mr_wheat_area/level1_mr_wheat_area.gd" type="Script" id=5]
+[ext_resource path="res://hud/dialogue/specific_dialogue.gd" type="Script" id=10]
+[ext_resource path="res://hud/dialogue/label/label.tscn" type="PackedScene" id=11]
 
 [node name="Dialogue" type="Panel" groups=["dialogue_subscriber"]]
 anchor_right = 1.0
@@ -23,21 +21,147 @@ margin_top = 20.0
 margin_right = -20.0
 margin_bottom = -80.0
 
-[node name="Level1Start" parent="Dialogues" instance=ExtResource( 2 )]
+[node name="Level1Start" type="Control" parent="Dialogues"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 10 )
 
-[node name="Level1BloodArea" parent="Dialogues" instance=ExtResource( 3 )]
+[node name="Label" parent="Dialogues/Level1Start" instance=ExtResource( 11 )]
+text = "Oh, that was a long nap! I wonder what time it is."
 
-[node name="Level1LabArea" parent="Dialogues" instance=ExtResource( 5 )]
+[node name="Level1BloodArea" type="Control" parent="Dialogues"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 10 )
 
-[node name="Level1MrWheatArea" parent="Dialogues" instance=ExtResource( 6 )]
+[node name="Label" parent="Dialogues/Level1BloodArea" instance=ExtResource( 11 )]
+text = "Ha, are those Greg's shoes? I wonder where he went without them."
 
-[node name="Level1ElevatorSwitchDisabledInit" parent="Dialogues" instance=ExtResource( 7 )]
+[node name="Label2" parent="Dialogues/Level1BloodArea" instance=ExtResource( 11 )]
+text = "What? There is some red slush everywhere! I won't be cleaning this mess again!"
 
-[node name="Level1KeypadIntro" parent="Dialogues" instance=ExtResource( 8 )]
+[node name="Label3" parent="Dialogues/Level1BloodArea" instance=ExtResource( 11 )]
+text = "I swear I'm going to kill Greg the next time I see him."
 
-[node name="Level1PlayersOfficeIntro" parent="Dialogues" instance=ExtResource( 9 )]
+[node name="Level1LabArea" type="Control" parent="Dialogues"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 10 )
 
-[node name="EndingGreg" parent="Dialogues" instance=ExtResource( 4 )]
+[node name="Label" parent="Dialogues/Level1LabArea" instance=ExtResource( 11 )]
+text = "It looks like no one from project HARVEST is here.
+But the lab is open. Weird."
+
+[node name="Level1MrWheatArea" type="Control" parent="Dialogues"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 5 )
+
+[node name="Label" parent="Dialogues/Level1MrWheatArea" instance=ExtResource( 11 )]
+text = "Wow! Hello, mutated wheat. I mean... don't take it personally, but I'll probably..."
+
+[node name="Label2" parent="Dialogues/Level1MrWheatArea" instance=ExtResource( 11 )]
+text = "RUN! *squeal*"
+
+[node name="Level1ElevatorSwitchDisabledInit" type="Control" parent="Dialogues"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+
+[node name="Label" parent="Dialogues/Level1ElevatorSwitchDisabledInit" instance=ExtResource( 11 )]
+text = "I better get out of this place."
+
+[node name="Label2" parent="Dialogues/Level1ElevatorSwitchDisabledInit" instance=ExtResource( 11 )]
+text = "The power to the elevator went out again. Just great."
+
+[node name="Label3" parent="Dialogues/Level1ElevatorSwitchDisabledInit" instance=ExtResource( 11 )]
+text = "I need to get inside the elevator control room."
+
+[node name="Level1KeypadIntro" type="Control" parent="Dialogues"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 4 )
+
+[node name="Label" parent="Dialogues/Level1KeypadIntro" instance=ExtResource( 11 )]
+text = "Yes! That’s the locker with the backup keys."
+
+[node name="Label2" parent="Dialogues/Level1KeypadIntro" instance=ExtResource( 11 )]
+text = "And somebody shuffled all the keys on the keypad. What a day!"
+
+[node name="Level1PlayersOfficeIntro" type="Control" parent="Dialogues"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 10 )
+
+[node name="Label" parent="Dialogues/Level1PlayersOfficeIntro" instance=ExtResource( 11 )]
+text = "\"Room 245, H. R. Vest\" - That's my office!
+
+And also my password."
+
+[node name="EndingGreg" type="Control" parent="Dialogues"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+
+[node name="Label" parent="Dialogues/EndingGreg" instance=ExtResource( 11 )]
+text = "Helena: Greg! What are you doing here?"
+
+[node name="Label2" parent="Dialogues/EndingGreg" instance=ExtResource( 11 )]
+text = "Greg: I'm just looking for cleaning stuff. You know, buckets, rags..."
+
+[node name="Label3" parent="Dialogues/EndingGreg" instance=ExtResource( 11 )]
+text = "Helena: Yeah, I'd found your shoes. There is red slush all over the lab!"
+
+[node name="Label4" parent="Dialogues/EndingGreg" instance=ExtResource( 11 )]
+text = "Greg: Yes, that was my hamburger. I dropped it on the floor and tried to catch it."
+
+[node name="Label5" parent="Dialogues/EndingGreg" instance=ExtResource( 11 )]
+text = "Helena: And how many times... Never mind."
+
+[node name="Label6" parent="Dialogues/EndingGreg" instance=ExtResource( 11 )]
+text = "Helena: THERE'S A MONSTER IN THE STORAGE ROOM!"
+
+[node name="Label7" parent="Dialogues/EndingGreg" instance=ExtResource( 11 )]
+text = "Greg: What monster? Ah, you mean the result of our research!"
+
+[node name="Label8" parent="Dialogues/EndingGreg" instance=ExtResource( 11 )]
+text = "Greg: It looks weird, but it's harmless. We call it Mr. Wheat."
+
+[node name="Label9" parent="Dialogues/EndingGreg" instance=ExtResource( 11 )]
+text = "Helena: IT TRIED TO KILL ME!"
+
+[node name="Label10" parent="Dialogues/EndingGreg" instance=ExtResource( 11 )]
+text = "Greg: Nonsense, Mr. Wheat never... Wait. Is that a müsli bar in your pocket?"
+
+[node name="Label11" parent="Dialogues/EndingGreg" instance=ExtResource( 11 )]
+text = "Helena: Yes, why?"
+
+[node name="Label12" parent="Dialogues/EndingGreg" instance=ExtResource( 11 )]
+text = "Greg: Mr. Wheat is very sensitive to harvested cereals. You scared him!"
+
+[node name="Label13" parent="Dialogues/EndingGreg" instance=ExtResource( 11 )]
+text = "Helena: So it was mutual. And by the way, where is everyone?"
+
+[node name="Label14" parent="Dialogues/EndingGreg" instance=ExtResource( 11 )]
+text = "Greg: In the main hall. We celebrate our success."
+
+[node name="Label15" parent="Dialogues/EndingGreg" instance=ExtResource( 11 )]
+text = "Helena: Party?"
+
+[node name="Label16" parent="Dialogues/EndingGreg" instance=ExtResource( 11 )]
+text = "Greg: Yeah!"
+
+[node name="Label17" parent="Dialogues/EndingGreg" instance=ExtResource( 11 )]
+text = "Helena: Great! Let's rock!"
+
+[node name="Level1BurnerIntro" type="Control" parent="Dialogues"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 10 )
+
+[node name="Label" parent="Dialogues/Level1BurnerIntro" instance=ExtResource( 11 )]
+text = "Hm, who left this thing here?
+Someone might get hurt if this gets used..."
 
 [node name="NextOrClose" type="Button" parent="."]
 pause_mode = 2

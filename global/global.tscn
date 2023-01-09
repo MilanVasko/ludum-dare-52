@@ -15,3 +15,4 @@ enemy_player_follow_delay = 1.0
 enemy_wait_time = 2.0
 enemy_run_speed = 190.0
 enemy_walk_speed = 50.0
+enemy_flee_speed = 400.0

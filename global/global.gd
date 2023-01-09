@@ -11,6 +11,7 @@ export(float) var enemy_player_follow_delay: float
 export(float) var enemy_wait_time: float
 export(float) var enemy_run_speed: float
 export(float) var enemy_walk_speed: float
+export(float) var enemy_flee_speed: float
 
 # such as tables
 var SEE_THROUGH_LAYER = 0b10

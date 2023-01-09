@@ -1,11 +1,18 @@
 extends KinematicBody2D
 
-export(bool) var is_activated: bool
+enum EnemyState {
+	NOT_ACTIVATED,
+	NORMAL,
+	SCARED
+}
+
+export(EnemyState) var state := EnemyState.NOT_ACTIVATED
 onready var last_known_player_position := global_position
 
 const threshold := 1.5
 var player_follow_delay := -1.0
 var wait_time := Global.enemy_wait_time
+var escape_waypoint: Node2D = null
 
 var points := []
 var ray := Vector2.ZERO
@@ -14,7 +21,14 @@ func _ready() -> void:
 	$AnimationPlayer.play("rest")
 
 func _activate() -> void:
-	is_activated = true
+	state = EnemyState.NORMAL
+
+func is_activated() -> bool:
+	return state != EnemyState.NOT_ACTIVATED
+
+func scare() -> void:
+	state = EnemyState.SCARED
+	escape_waypoint = null
 
 # TODO: find these in a better way
 func find_navigation() -> Node:
@@ -30,9 +44,15 @@ func can_see_player() -> bool:
 	return Global.is_any_parent_in_group(result["collider"], "player")
 
 func _physics_process(delta: float) -> void:
-	if !is_activated:
-		return
+	match state:
+		EnemyState.NOT_ACTIVATED:
+			return
+		EnemyState.NORMAL:
+			chase_player(delta)
+		EnemyState.SCARED:
+			run_away()
 
+func chase_player(delta: float) -> void:
 	var player_node := find_player()
 	if can_see_player():
 		last_known_player_position = player_node.global_position
@@ -50,6 +70,19 @@ func _physics_process(delta: float) -> void:
 				return
 		else:
 			var _ignored := go_towards(player_node.global_position, Global.enemy_walk_speed)
+
+func run_away() -> void:
+	if escape_waypoint == null:
+		escape_waypoint = choose_escape_waypoint()
+
+	var _ignored := go_towards(escape_waypoint.global_position, Global.enemy_flee_speed)
+	if global_position.distance_squared_to(escape_waypoint.global_position) < 200*200:
+		queue_free()
+
+func choose_escape_waypoint() -> Node2D:
+	var waypoints := get_tree().get_nodes_in_group("enemy_escape_waypoint")
+	assert(!waypoints.empty())
+	return waypoints[randi() % waypoints.size()]
 
 func go_towards(target_position: Vector2, speed: float) -> bool:
 	var is_idle := true

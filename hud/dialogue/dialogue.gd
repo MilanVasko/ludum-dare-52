@@ -22,6 +22,8 @@ func _on_dialogue_start(dialogue_id: String) -> void:
 		show_dialogue(dialogues.get_node("Level1KeypadIntro"))
 	elif dialogue_id == "level1/players_office_intro":
 		show_dialogue(dialogues.get_node("Level1PlayersOfficeIntro"))
+	elif dialogue_id == "level1/burner_intro":
+		show_dialogue(dialogues.get_node("Level1BurnerIntro"))
 	elif dialogue_id == "ending/greg":
 		show_dialogue(dialogues.get_node("EndingGreg"))
 	else:

@@ -1,0 +1,3 @@
+[gd_scene format=2]
+
+[node name="EnemyEscapeWaypoint" type="Position2D" groups=["enemy_escape_waypoint"]]
