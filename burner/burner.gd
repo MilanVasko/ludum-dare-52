@@ -9,5 +9,6 @@ func _can_use() -> bool:
 
 func _use(caller: Node2D) -> void:
 	if get_node("/root/Game")._use_burner(self, caller):
+		$Explosion.play()
 		$Result.visible = true
 		$Result/HurtArea.monitoring = true

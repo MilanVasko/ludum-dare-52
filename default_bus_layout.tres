@@ -1,4 +1,11 @@
-[gd_resource type="AudioBusLayout" load_steps=3 format=2]
+[gd_resource type="AudioBusLayout" load_steps=5 format=2]
+
+[sub_resource type="AudioEffectCompressor" id=5]
+resource_name = "Compressor"
+gain = 3.9
+
+[sub_resource type="AudioEffectDistortion" id=6]
+resource_name = "Distortion"
 
 [sub_resource type="AudioEffectReverb" id=2]
 resource_name = "Reverb"
@@ -117,3 +124,13 @@ bus/17/mute = false
 bus/17/bypass_fx = false
 bus/17/volume_db = 0.0
 bus/17/send = "Sounds"
+bus/18/name = "Explosion"
+bus/18/solo = false
+bus/18/mute = false
+bus/18/bypass_fx = false
+bus/18/volume_db = 3.2425
+bus/18/send = "Sounds"
+bus/18/effect/0/effect = SubResource( 5 )
+bus/18/effect/0/enabled = true
+bus/18/effect/1/effect = SubResource( 6 )
+bus/18/effect/1/enabled = true

@@ -153,7 +153,7 @@ locked_with = "level1/door_to_elevator_key"
 locked_popup_id = "level1/door_to_elevator_locked"
 
 [node name="Player" parent="Entities" instance=ExtResource( 4 )]
-position = Vector2( 797, -892 )
+position = Vector2( 93, 5 )
 
 [node name="Enemy" parent="Entities" instance=ExtResource( 7 )]
 position = Vector2( -1848, 1122 )
@@ -226,7 +226,7 @@ position = Vector2( 1957, -649 )
 position = Vector2( -1330.68, 187.404 )
 
 [node name="Furniture2" parent="Entities/LabFurniture" instance=ExtResource( 26 )]
-position = Vector2( -1218.42, 187.404 )
+position = Vector2( -1218.42, 187.091 )
 
 [node name="Furniture4" parent="Entities/LabFurniture" instance=ExtResource( 25 )]
 position = Vector2( -1332.04, 246.374 )
