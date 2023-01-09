@@ -14,20 +14,16 @@ func _ready() -> void:
 
 	initializing = true
 	empty_index = -1
-	var focus_grabbed := false
 	for i in range(grid_container.get_child_count()):
 		if is_empty(i):
 			empty_index = i
 		else:
 			var child := grid_container.get_child(i)
-			child.grab_focus()
 			var err := child.connect("key_pressed", self, "_on_key_pressed")
 			assert(err == OK)
-			focus_grabbed = true
 	assert(empty_index != -1)
-	assert(focus_grabbed)
 
-	shuffle()
+	#shuffle()
 	initializing = false
 
 func _unhandled_input(event: InputEvent) -> void:

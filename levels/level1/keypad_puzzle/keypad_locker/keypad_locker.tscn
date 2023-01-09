@@ -6,7 +6,7 @@
 [ext_resource path="res://locker/locker_open.tres" type="Texture" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 35.5, 82.4439 )
+extents = Vector2( 35.5, 131.5 )
 
 [node name="KeypadLocker" type="StaticBody2D" groups=["keypad_locker"]]
 script = ExtResource( 2 )

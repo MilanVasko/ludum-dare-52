@@ -106,8 +106,8 @@ func go_towards(target_position: Vector2, speed: float) -> bool:
 		update()
 	return is_idle
 
-func _draw() -> void:
-	if points.size() > 1:
-		for p in points:
-			draw_circle(to_local(p), 8, Color(1, 0, 0))
-	# draw_line(Vector2.ZERO, to_local(find_player().global_position), Color.blue, 4.0)
+#func _draw() -> void:
+#	if points.size() > 1:
+#		for p in points:
+#			draw_circle(to_local(p), 8, Color(1, 0, 0))
+#	# draw_line(Vector2.ZERO, to_local(find_player().global_position), Color.blue, 4.0)
