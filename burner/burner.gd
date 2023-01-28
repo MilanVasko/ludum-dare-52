@@ -1,8 +1,16 @@
 extends Area2D
 
+onready var sprite := $Sprite
+
 func _ready() -> void:
 	$Result.visible = false
 	$Result/HurtArea.monitoring = false
+
+func _on_player_entered() -> void:
+	sprite.highlight()
+
+func _on_player_exited() -> void:
+	sprite.dim()
 
 func _can_use() -> bool:
 	return get_node("/root/Game")._can_use_burner()

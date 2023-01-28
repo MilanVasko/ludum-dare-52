@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://door/door.gd" type="Script" id=1]
 [ext_resource path="res://door/door1.png" type="Texture" id=2]
@@ -7,6 +7,13 @@
 [ext_resource path="res://door/locked.wav" type="AudioStream" id=5]
 [ext_resource path="res://door/locked2.wav" type="AudioStream" id=6]
 [ext_resource path="res://door/opened.wav" type="AudioStream" id=7]
+[ext_resource path="res://highlighted_sprite/highlighted_sprite.tscn" type="PackedScene" id=8]
+[ext_resource path="res://highlighted_sprite/highlighted_sprite.gdshader" type="Shader" id=9]
+
+[sub_resource type="ShaderMaterial" id=2]
+resource_local_to_scene = true
+shader = ExtResource( 9 )
+shader_param/solid_color = Color( 1, 1, 1, 0 )
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 56, 91.5 )
@@ -15,12 +22,15 @@ extents = Vector2( 56, 91.5 )
 script = ExtResource( 1 )
 locked_with = "ungettable_key"
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="HighlightedSprite" parent="." instance=ExtResource( 8 )]
+material = SubResource( 2 )
 position = Vector2( 0, -91.6 )
-rotation = -3.14159
-scale = Vector2( 0.25, -0.25 )
+scale = Vector2( -0.25, 0.25 )
 texture = ExtResource( 2 )
+
+[node name="RandomSprite" type="Node" parent="."]
 script = ExtResource( 3 )
+target_sprite_path = NodePath("../HighlightedSprite")
 possible_textures = [ ExtResource( 2 ), ExtResource( 4 ) ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

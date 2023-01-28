@@ -4,6 +4,12 @@ var already_used := false
 
 signal panel_used
 
+func _on_player_entered() -> void:
+	$Sprite.highlight()
+
+func _on_player_exited() -> void:
+	$Sprite.dim()
+
 func _can_use() -> bool:
 	return !already_used
 

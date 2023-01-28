@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://elevator/elevator.gd" type="Script" id=1]
 [ext_resource path="res://elevator/parts/room.tres" type="Texture" id=2]
@@ -8,6 +8,8 @@
 [ext_resource path="res://light/working_light.tscn" type="PackedScene" id=6]
 [ext_resource path="res://elevator/beep.wav" type="AudioStream" id=7]
 [ext_resource path="res://elevator/door.wav" type="AudioStream" id=8]
+[ext_resource path="res://highlighted_sprite/highlighted_sprite.tscn" type="PackedScene" id=9]
+[ext_resource path="res://elevator/elevator_button.png" type="Texture" id=10]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 43.75, 42.25 )
@@ -34,6 +36,10 @@ position = Vector2( -196, -202 )
 [node name="Panel" type="Area2D" parent="."]
 position = Vector2( -85, -150 )
 script = ExtResource( 5 )
+
+[node name="Sprite" parent="Panel" instance=ExtResource( 9 )]
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 10 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Panel"]
 shape = SubResource( 1 )

@@ -10,6 +10,14 @@ func _can_use() -> bool:
 func _dialogue_finished() -> void:
 	dialogue_finished = true
 
+func _on_player_entered() -> void:
+	$ElevatorSwitchDisabled.highlight()
+	$ElevatorSwitchEnabled.highlight()
+
+func _on_player_exited() -> void:
+	$ElevatorSwitchDisabled.dim()
+	$ElevatorSwitchEnabled.dim()
+
 func _use(_caller: Node2D) -> void:
 	if switch_enabled:
 		already_used_successfully = true

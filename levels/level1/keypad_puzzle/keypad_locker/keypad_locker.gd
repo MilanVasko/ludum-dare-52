@@ -5,6 +5,14 @@ export(String) var door_key_id: String
 var already_solved := false
 var dialogue_finished := false
 
+func _on_player_entered() -> void:
+	$Closed.highlight()
+	$Open.highlight()
+
+func _on_player_exited() -> void:
+	$Closed.dim()
+	$Open.dim()
+
 func _can_use() -> bool:
 	return !already_solved
 

@@ -1,7 +1,16 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://door/door.tscn" type="PackedScene" id=1]
 [ext_resource path="res://door_players_office/door_players_office.gd" type="Script" id=2]
+[ext_resource path="res://highlighted_sprite/highlighted_sprite.gdshader" type="Shader" id=3]
+
+[sub_resource type="ShaderMaterial" id=1]
+resource_local_to_scene = true
+shader = ExtResource( 3 )
+shader_param/solid_color = Color( 1, 1, 1, 0 )
 
 [node name="DoorPlayersOffice" groups=["door_players_office"] instance=ExtResource( 1 )]
 script = ExtResource( 2 )
+
+[node name="HighlightedSprite" parent="." index="0"]
+material = SubResource( 1 )

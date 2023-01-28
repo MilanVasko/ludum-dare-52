@@ -20,4 +20,5 @@ position = Vector2( 0, -7 )
 scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 2 )
 script = ExtResource( 1 )
+target_sprite_path = NodePath(".")
 possible_textures = [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ]

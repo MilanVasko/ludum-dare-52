@@ -3,6 +3,14 @@ extends Area2D
 export(String) var popup_id: String
 var already_used := false
 
+func _on_player_entered() -> void:
+	$Off.highlight()
+	$On.highlight()
+
+func _on_player_exited() -> void:
+	$Off.dim()
+	$On.dim()
+
 func _can_use() -> bool:
 	return !already_used
 

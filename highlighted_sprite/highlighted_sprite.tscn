@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://highlighted_sprite/highlighted_sprite.gdshader" type="Shader" id=1]
+[ext_resource path="res://highlighted_sprite/highlighted_sprite.gd" type="Script" id=2]
+
+[sub_resource type="ShaderMaterial" id=1]
+resource_local_to_scene = true
+shader = ExtResource( 1 )
+shader_param/solid_color = Color( 1, 1, 1, 0 )
+
+[node name="HighlightedSprite" type="Sprite"]
+material = SubResource( 1 )
+script = ExtResource( 2 )
+highlight_alpha = 0.5
+change_speed = 10.0
+target_sprite_path = NodePath(".")

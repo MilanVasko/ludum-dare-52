@@ -21,6 +21,9 @@ func _on_object_entered(obj: Node) -> void:
 		_on_object_exited(close_usable_object)
 
 	close_usable_object = obj
+	if obj.has_method("_on_player_entered"):
+		obj._on_player_entered()
+
 	get_tree().call_group("usable_object_subscriber", "_on_usable_object_entered", obj)
 
 func _on_object_exited(obj: Node) -> void:
@@ -28,6 +31,9 @@ func _on_object_exited(obj: Node) -> void:
 		return
 
 	close_usable_object = null
+	if obj.has_method("_on_player_exited"):
+		obj._on_player_exited()
+
 	get_tree().call_group("usable_object_subscriber", "_on_usable_object_exited", obj)
 
 func can_use(obj) -> bool:
