@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/press2.wav-27d59a97e82c8168ba9976d653fd65c0.sample"
+
+[deps]
+
+source_file="res://level1/keypad_puzzle/key/press2.wav"
+dest_files=[ "res://.import/press2.wav-27d59a97e82c8168ba9976d653fd65c0.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

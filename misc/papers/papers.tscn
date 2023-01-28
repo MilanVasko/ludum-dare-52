@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://misc/papers/papers.tres" type="Texture" id=1]
+
+[node name="Papers" type="Node2D"]
+scale = Vector2( 0.8, 0.8 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0, -44.511 )
+scale = Vector2( 0.369808, 0.369807 )
+texture = ExtResource( 1 )

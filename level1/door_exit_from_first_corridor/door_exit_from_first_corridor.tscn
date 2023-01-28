@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://door/door.tscn" type="PackedScene" id=1]
+[ext_resource path="res://level1/door_exit_from_first_corridor/door_exit_from_first_corridor.gd" type="Script" id=2]
+
+[node name="DoorExitFromFirstCorridor" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+locked_popup_id = "level1/exit_from_first_corridor"

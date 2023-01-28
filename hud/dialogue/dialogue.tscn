@@ -1,12 +1,12 @@
 [gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://hud/dialogue/dialogue.gd" type="Script" id=1]
-[ext_resource path="res://hud/dialogue/ending_greg/ending_greg.gd" type="Script" id=2]
-[ext_resource path="res://hud/dialogue/level1_elevator_switch_disabled_init/level1_elevator_switch_disabled_init.gd" type="Script" id=3]
-[ext_resource path="res://hud/dialogue/level1_keypad_intro/level1_keypad_intro.gd" type="Script" id=4]
-[ext_resource path="res://hud/dialogue/level1_mr_wheat_area/level1_mr_wheat_area.gd" type="Script" id=5]
+[ext_resource path="res://hud/dialogue/ending_greg.gd" type="Script" id=2]
+[ext_resource path="res://hud/dialogue/level1_elevator_switch_disabled_init.gd" type="Script" id=3]
+[ext_resource path="res://hud/dialogue/level1_keypad_intro.gd" type="Script" id=4]
+[ext_resource path="res://hud/dialogue/level1_mr_wheat_area.gd" type="Script" id=5]
 [ext_resource path="res://hud/dialogue/specific_dialogue.gd" type="Script" id=10]
-[ext_resource path="res://hud/dialogue/label/label.tscn" type="PackedScene" id=11]
+[ext_resource path="res://hud/dialogue/label.tscn" type="PackedScene" id=11]
 
 [node name="Dialogue" type="Panel" groups=["dialogue_subscriber"]]
 anchor_right = 1.0

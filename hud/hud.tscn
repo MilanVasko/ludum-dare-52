@@ -4,7 +4,7 @@
 [ext_resource path="res://hud/dialogue/dialogue.tscn" type="PackedScene" id=2]
 [ext_resource path="res://hud/action_possible/action_possible.tscn" type="PackedScene" id=3]
 [ext_resource path="res://hud/popup/popup.tscn" type="PackedScene" id=4]
-[ext_resource path="res://levels/level1/keypad_puzzle/keypad_puzzle.tscn" type="PackedScene" id=5]
+[ext_resource path="res://level1/keypad_puzzle/keypad_puzzle.tscn" type="PackedScene" id=5]
 [ext_resource path="res://hud/health.gd" type="Script" id=6]
 [ext_resource path="res://hud/game_over/game_over.tscn" type="PackedScene" id=7]
 
