@@ -9,11 +9,9 @@ onready var target_sprite := get_node(target_sprite_path)
 onready var target_alpha = get_highlight_color().a
 
 func highlight() -> void:
-	print("Highlighting to ", highlight_alpha)
 	target_alpha = highlight_alpha
 
 func dim() -> void:
-	print("Dimming to ", normal_alpha)
 	target_alpha = normal_alpha
 
 func get_highlight_color() -> Color:
