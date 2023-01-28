@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://hud/stamina.gd" type="Script" id=1]
+[ext_resource path="res://hud/progress_bars.tres" type="Theme" id=2]
+[ext_resource path="res://hud/stamina_fg.tres" type="StyleBox" id=3]
+
+[node name="Stamina" type="HBoxContainer"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = -50.0
+margin_right = 310.0
+margin_bottom = -10.0
+
+[node name="Label" type="Label" parent="."]
+margin_right = 98.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Stamina"
+align = 1
+valign = 1
+
+[node name="Stamina" type="ProgressBar" parent="." groups=["stamina_subscriber"]]
+margin_left = 102.0
+margin_right = 300.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+theme = ExtResource( 2 )
+custom_styles/fg = ExtResource( 3 )
+value = 100.0
+percent_visible = false
+script = ExtResource( 1 )
