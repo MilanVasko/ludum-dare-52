@@ -34,6 +34,7 @@ func is_chasing_us() -> bool:
 func scare() -> void:
 	state = EnemyState.SCARED
 	escape_waypoint = null
+	get_tree().call_group("enemy_scared_subscriber", "_on_enemy_scared", self)
 
 # TODO: find these in a better way
 func find_navigation() -> Node:

@@ -1,8 +1,17 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://door/door.tscn" type="PackedScene" id=1]
 [ext_resource path="res://level1/door_exit_from_first_corridor/door_exit_from_first_corridor.gd" type="Script" id=2]
+[ext_resource path="res://highlighted_sprite/highlighted_sprite.gdshader" type="Shader" id=3]
 
-[node name="DoorExitFromFirstCorridor" instance=ExtResource( 1 )]
+[sub_resource type="ShaderMaterial" id=1]
+resource_local_to_scene = true
+shader = ExtResource( 3 )
+shader_param/solid_color = Color( 1, 1, 1, 0 )
+
+[node name="DoorExitFromFirstCorridor" groups=["enemy_scared_subscriber"] instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 locked_popup_id = "level1/exit_from_first_corridor"
+
+[node name="HighlightedSprite" parent="." index="0"]
+material = SubResource( 1 )
