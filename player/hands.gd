@@ -10,7 +10,13 @@ func _process(_delta: float) -> void:
 
 	if can_use(close_usable_object):
 		close_usable_object._use(player)
+		if !can_use(close_usable_object):
+			_on_object_exited(close_usable_object)
 	else:
+		_on_object_exited(close_usable_object)
+
+func _on_interaction_finished(used_object: Node2D) -> void:
+	if close_usable_object == used_object:
 		_on_object_exited(close_usable_object)
 
 func _on_object_entered(obj: Node) -> void:
