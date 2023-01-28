@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/power-box.png-1eb9c108e9b9b0a2018d05832701002e.stex"
+path="res://.import/power-box.png-d1f82637e6a8043b27e067f2fd5cf72d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://levels/level1/keypad_puzzle/key/power-box.png"
-dest_files=[ "res://.import/power-box.png-1eb9c108e9b9b0a2018d05832701002e.stex" ]
+source_file="res://power_on_switch/power-box.png"
+dest_files=[ "res://.import/power-box.png-d1f82637e6a8043b27e067f2fd5cf72d.stex" ]
 
 [params]
 
