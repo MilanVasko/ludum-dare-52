@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://misc2/flask2/flash2.tres" type="Texture" id=1]
+
+[node name="Flask2" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0, -21 )
+scale = Vector2( 0.258993, 0.258993 )
+texture = ExtResource( 1 )

@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://misc2/plates/plates.tres" type="Texture" id=1]
+
+[node name="Plates" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 4.76837e-07, -19 )
+scale = Vector2( 0.555567, 0.555567 )
+texture = ExtResource( 1 )
