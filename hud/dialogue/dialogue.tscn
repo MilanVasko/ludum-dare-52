@@ -1,16 +1,18 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://hud/dialogue/dialogue.gd" type="Script" id=1]
 [ext_resource path="res://hud/dialogue/ending_greg.gd" type="Script" id=2]
 [ext_resource path="res://hud/dialogue/level1_elevator_switch_disabled_init.gd" type="Script" id=3]
 [ext_resource path="res://hud/dialogue/level1_keypad_intro.gd" type="Script" id=4]
 [ext_resource path="res://hud/dialogue/level1_mr_wheat_area.gd" type="Script" id=5]
+[ext_resource path="res://hud/hud.tres" type="Theme" id=6]
 [ext_resource path="res://hud/dialogue/specific_dialogue.gd" type="Script" id=10]
 [ext_resource path="res://hud/dialogue/label.tscn" type="PackedScene" id=11]
 
 [node name="Dialogue" type="Panel" groups=["dialogue_subscriber"]]
 anchor_right = 1.0
 anchor_bottom = 1.0
+theme = ExtResource( 6 )
 script = ExtResource( 1 )
 
 [node name="Dialogues" type="Control" parent="."]

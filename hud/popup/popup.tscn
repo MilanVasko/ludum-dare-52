@@ -1,11 +1,14 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://hud/popup/popup_panel.gd" type="Script" id=1]
+[ext_resource path="res://hud/hud.tres" type="Theme" id=2]
+[ext_resource path="res://hud/popup/label.tscn" type="PackedScene" id=3]
 
 [node name="Popup" type="Control"]
 pause_mode = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
+theme = ExtResource( 2 )
 
 [node name="PopupDialog" type="PopupDialog" parent="." groups=["popup_subscriber"]]
 visible = true
@@ -14,87 +17,34 @@ anchor_right = 0.75
 anchor_bottom = 0.25
 margin_right = 1.0
 margin_bottom = 1.0
+theme = ExtResource( 2 )
 script = ExtResource( 1 )
 timer_path = NodePath("../PopupTimer")
 
-[node name="PlayersOffice" type="Label" parent="PopupDialog"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 20.0
-margin_top = 20.0
-margin_right = -20.0
-margin_bottom = -20.0
+[node name="Label" parent="PopupDialog" instance=ExtResource( 3 )]
+
+[node name="PlayersOffice" parent="PopupDialog" instance=ExtResource( 3 )]
 text = "\"Room 245, H. R. Vest\" - That's my office.
 
 The door is locked. I have the keys. On the desk. Inside."
-align = 1
-valign = 1
 
-[node name="PowerOn" type="Label" parent="PopupDialog"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 20.0
-margin_top = 20.0
-margin_right = -20.0
-margin_bottom = -20.0
+[node name="PowerOn" parent="PopupDialog" instance=ExtResource( 3 )]
 text = "The power should be on now."
-align = 1
-valign = 1
 
-[node name="LockedDoor" type="Label" parent="PopupDialog"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 20.0
-margin_top = 20.0
-margin_right = -20.0
-margin_bottom = -20.0
+[node name="LockedDoor" parent="PopupDialog" instance=ExtResource( 3 )]
 text = "Locked. Of course."
-align = 1
-valign = 1
 
-[node name="DoorToElevatorLocked" type="Label" parent="PopupDialog"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 20.0
-margin_top = 20.0
-margin_right = -20.0
-margin_bottom = -20.0
+[node name="DoorToElevatorLocked" parent="PopupDialog" instance=ExtResource( 3 )]
 text = "The elevator control room. Locked, as usual."
-align = 1
-valign = 1
 
-[node name="KeypadLockerKeyFound" type="Label" parent="PopupDialog"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 20.0
-margin_top = 20.0
-margin_right = -20.0
-margin_bottom = -20.0
+[node name="KeypadLockerKeyFound" parent="PopupDialog" instance=ExtResource( 3 )]
 text = "There's a key inside!"
-align = 1
-valign = 1
 
-[node name="ElevatorSwitchDisabled" type="Label" parent="PopupDialog"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 20.0
-margin_top = 20.0
-margin_right = -20.0
-margin_bottom = -20.0
+[node name="ElevatorSwitchDisabled" parent="PopupDialog" instance=ExtResource( 3 )]
 text = "I need to get to the elevator control room to make this switch work again..."
-align = 1
-valign = 1
 
-[node name="ExitFromFirstCorridor" type="Label" parent="PopupDialog"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 20.0
-margin_top = 20.0
-margin_right = -20.0
-margin_bottom = -20.0
+[node name="ExitFromFirstCorridor" parent="PopupDialog" instance=ExtResource( 3 )]
 text = "I hope Greg didn't lock me in here... OK, he did."
-align = 1
-valign = 1
 
 [node name="PopupTimer" type="Timer" parent="."]
 wait_time = 2.0
