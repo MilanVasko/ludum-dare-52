@@ -2,10 +2,12 @@ extends Panel
 
 onready var dialogues := $Dialogues
 onready var next_or_close := $NextOrClose
+onready var label := $NextOrClose/Label
 var current_dialogue: Control = null
 
 func _ready() -> void:
 	hide()
+	label.add_color_override("font_color", Color(0, 0, 0))
 
 func _on_dialogue_start(dialogue_id: String) -> void:
 	if dialogue_id == "level1/start":
@@ -34,7 +36,7 @@ func show_dialogue(which: Control) -> void:
 
 	Global.show_just_one(dialogues.get_children(), which)
 	current_dialogue = which
-	next_or_close.text = which.get_label()
+	label.text = (which.get_label())
 	show()
 	next_or_close.grab_focus()
 
@@ -44,4 +46,4 @@ func _on_next_or_close_pressed() -> void:
 		get_tree().paused = false
 		if current_dialogue.has_method("_on_dialogue_end"):
 			current_dialogue._on_dialogue_end()
-	next_or_close.text = current_dialogue.get_label()
+	label.text = current_dialogue.get_label()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://hud/dialogue/dialogue.gd" type="Script" id=1]
 [ext_resource path="res://hud/dialogue/ending_greg.gd" type="Script" id=2]
@@ -6,6 +6,9 @@
 [ext_resource path="res://hud/dialogue/level1_keypad_intro.gd" type="Script" id=4]
 [ext_resource path="res://hud/dialogue/level1_mr_wheat_area.gd" type="Script" id=5]
 [ext_resource path="res://hud/hud.tres" type="Theme" id=6]
+[ext_resource path="res://button/button1_normal.tres" type="Texture" id=7]
+[ext_resource path="res://button/button1_hover.tres" type="Texture" id=8]
+[ext_resource path="res://button/button1_pressed.tres" type="Texture" id=9]
 [ext_resource path="res://hud/dialogue/specific_dialogue.gd" type="Script" id=10]
 [ext_resource path="res://hud/dialogue/label.tscn" type="PackedScene" id=11]
 
@@ -165,7 +168,7 @@ script = ExtResource( 10 )
 text = "Hm, who left this thing here?
 Someone might get hurt if this gets used..."
 
-[node name="NextOrClose" type="Button" parent="."]
+[node name="NextOrClose" type="TextureButton" parent="."]
 pause_mode = 2
 anchor_left = 0.51
 anchor_top = 1.0
@@ -175,6 +178,16 @@ margin_left = -100.0
 margin_top = -60.0
 margin_right = 100.0
 margin_bottom = -20.0
-text = "Next"
+texture_normal = ExtResource( 7 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 8 )
+expand = true
+
+[node name="Label" type="Label" parent="NextOrClose"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "Button"
+align = 1
+valign = 1
 
 [connection signal="pressed" from="NextOrClose" to="." method="_on_next_or_close_pressed"]
