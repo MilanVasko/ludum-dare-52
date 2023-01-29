@@ -3,13 +3,14 @@ extends Node2D
 export(String) var locked_with: String
 export(String) var locked_popup_id: String
 export(String) var unlocked_popup_id: String
-onready var sprite := $HighlightedSprite
+onready var sprite_closed := $HighlightedSprite
+onready var sprite_broken := $BrokenSprite
 
 func _on_player_entered() -> void:
-	sprite.highlight()
+	sprite_closed.highlight()
 
 func _on_player_exited() -> void:
-	sprite.dim()
+	sprite_closed.dim()
 
 func _use(caller: Node2D) -> void:
 	if locked_with == "" || caller.has_door_key(locked_with):
@@ -25,4 +26,5 @@ func _use(caller: Node2D) -> void:
 func open() -> void:
 	$Opened.play()
 	$CollisionShape2D.disabled = true
-	sprite.hide()
+	sprite_closed.hide()
+	sprite_broken.show()
