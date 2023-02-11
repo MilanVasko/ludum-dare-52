@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://elevator/elevator.gd" type="Script" id=1]
 [ext_resource path="res://elevator/parts/room.tres" type="Texture" id=2]
@@ -10,6 +10,12 @@
 [ext_resource path="res://elevator/door.wav" type="AudioStream" id=8]
 [ext_resource path="res://highlighted_sprite/highlighted_sprite.tscn" type="PackedScene" id=9]
 [ext_resource path="res://elevator/elevator_button.png" type="Texture" id=10]
+[ext_resource path="res://highlighted_sprite/highlighted_sprite.gdshader" type="Shader" id=11]
+
+[sub_resource type="ShaderMaterial" id=3]
+resource_local_to_scene = true
+shader = ExtResource( 11 )
+shader_param/solid_color = Color( 1, 1, 1, 0 )
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 43.75, 42.25 )
@@ -38,6 +44,7 @@ position = Vector2( -85, -150 )
 script = ExtResource( 5 )
 
 [node name="Sprite" parent="Panel" instance=ExtResource( 9 )]
+material = SubResource( 3 )
 scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 10 )
 

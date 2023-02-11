@@ -1,13 +1,18 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://level1/keypad_puzzle/key/key.tscn" type="PackedScene" id=1]
 [ext_resource path="res://level1/keypad_puzzle/keypad_puzzle.gd" type="Script" id=2]
+[ext_resource path="res://hud/hud.tres" type="Theme" id=3]
+[ext_resource path="res://button/button1_hover.tres" type="Texture" id=4]
+[ext_resource path="res://button/button1_pressed.tres" type="Texture" id=5]
+[ext_resource path="res://hud/game_over/play_again.gd" type="Script" id=6]
+[ext_resource path="res://button/button1_normal.tres" type="Texture" id=7]
 
 [node name="KeypadPuzzle" type="Panel" groups=["keypad_puzzle"]]
 pause_mode = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = -539.0
+theme = ExtResource( 3 )
 script = ExtResource( 2 )
 steps_to_shuffle = 31
 
@@ -19,7 +24,7 @@ margin_top = 20.0
 margin_right = -20.0
 
 [node name="GridContainer" type="GridContainer" parent="Container"]
-margin_right = 445.0
+margin_right = 984.0
 margin_bottom = 460.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -29,23 +34,23 @@ columns = 3
 [node name="Key2" parent="Container/GridContainer" instance=ExtResource( 1 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 146.0
+margin_right = 326.0
 margin_bottom = 151.0
 number = 2
 
 [node name="Key7" parent="Container/GridContainer" instance=ExtResource( 1 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 150.0
-margin_right = 296.0
+margin_left = 330.0
+margin_right = 655.0
 margin_bottom = 151.0
 number = 7
 
 [node name="Key3" parent="Container/GridContainer" instance=ExtResource( 1 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 300.0
-margin_right = 445.0
+margin_left = 659.0
+margin_right = 984.0
 margin_bottom = 151.0
 number = 3
 
@@ -53,25 +58,25 @@ number = 3
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 155.0
-margin_right = 146.0
+margin_right = 326.0
 margin_bottom = 306.0
 number = 4
 
 [node name="Key6" parent="Container/GridContainer" instance=ExtResource( 1 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 150.0
+margin_left = 330.0
 margin_top = 155.0
-margin_right = 296.0
+margin_right = 655.0
 margin_bottom = 306.0
 number = 6
 
 [node name="Key9" parent="Container/GridContainer" instance=ExtResource( 1 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 300.0
+margin_left = 659.0
 margin_top = 155.0
-margin_right = 445.0
+margin_right = 984.0
 margin_bottom = 306.0
 number = 9
 
@@ -79,43 +84,54 @@ number = 9
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 310.0
-margin_right = 146.0
+margin_right = 326.0
 margin_bottom = 460.0
 number = 8
 
 [node name="Key5" parent="Container/GridContainer" instance=ExtResource( 1 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 150.0
+margin_left = 330.0
 margin_top = 310.0
-margin_right = 296.0
+margin_right = 655.0
 margin_bottom = 460.0
 number = 5
 
 [node name="Empty" type="Control" parent="Container/GridContainer"]
-margin_left = 300.0
+margin_left = 659.0
 margin_top = 310.0
-margin_right = 445.0
+margin_right = 984.0
 margin_bottom = 460.0
 
 [node name="Container" type="Control" parent="Container"]
 margin_top = 464.0
-margin_right = 445.0
+margin_right = 984.0
 margin_bottom = 580.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Close" type="Button" parent="Container/Container"]
+[node name="Close" type="TextureButton" parent="Container/Container"]
+pause_mode = 2
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 1.0
 anchor_right = 0.5
-anchor_bottom = 0.5
+anchor_bottom = 1.0
 margin_left = -100.0
-margin_top = -20.0
+margin_top = -60.0
 margin_right = 100.0
-margin_bottom = 20.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
+margin_bottom = -20.0
+texture_normal = ExtResource( 7 )
+texture_pressed = ExtResource( 5 )
+texture_hover = ExtResource( 4 )
+expand = true
+script = ExtResource( 6 )
+
+[node name="Label" type="Label" parent="Container/Container/Close"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Close"
+align = 1
+valign = 1
 
 [connection signal="pressed" from="Container/Container/Close" to="." method="_on_close_pressed"]
