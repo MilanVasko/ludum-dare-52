@@ -1,6 +1,7 @@
 extends Control
 
 export(int) var steps_to_shuffle: int
+export(Color) var success_color: Color
 const COLS := 3
 
 onready var grid_container := $Container/GridContainer
@@ -19,6 +20,7 @@ func _ready() -> void:
 			empty_index = i
 		else:
 			var child := grid_container.get_child(i)
+			update_child_color(i)
 			var err := child.connect("key_pressed", self, "_on_key_pressed")
 			assert(err == OK)
 	assert(empty_index != -1)
@@ -49,9 +51,12 @@ func is_solved() -> bool:
 	if !is_empty(0):
 		return false
 	for i in range(1, grid_container.get_child_count()):
-		if grid_container.get_child(i).number != i + 1:
+		if !is_child_at_the_right_place(i):
 			return false
 	return true
+
+func is_child_at_the_right_place(index: int) -> bool:
+	return grid_container.get_child(index).number == index + 1
 
 func is_empty(index: int) -> bool:
 	return grid_container.get_child(index).name == "Empty"
@@ -103,11 +108,21 @@ func swap(neighbour_index: int, empty_index_: int) -> void:
 	var empty := grid_container.get_child(empty_index_)
 	grid_container.move_child(neighbour, empty_index_)
 	grid_container.move_child(empty, neighbour_index)
+	update_child_color(empty_index_)
 	empty_index = neighbour_index
 	if !initializing && is_solved() && !already_solved:
 		already_solved = true
 		_on_close_pressed()
 		emit_signal("puzzle_solved")
+
+func update_child_color(index: int) -> void:
+	if is_empty(index):
+		return
+	var child: TextureButton = grid_container.get_child(index)
+	if is_child_at_the_right_place(index):
+		child.modulate = success_color
+	else:
+		child.modulate = Color.white
 
 func go_up(index: int) -> int:
 	var new_index := index - COLS
