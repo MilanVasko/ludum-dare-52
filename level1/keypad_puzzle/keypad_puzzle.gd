@@ -27,7 +27,7 @@ func _ready() -> void:
 	initializing = false
 
 func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action("ui_cancel"):
+	if visible && event.is_action("ui_cancel"):
 		_on_close_pressed()
 
 func _on_keypad_puzzle_start() -> void:
