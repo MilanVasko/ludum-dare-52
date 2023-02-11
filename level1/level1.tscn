@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=2]
+[gd_scene load_steps=66 format=2]
 
 [ext_resource path="res://hud/hud.tscn" type="PackedScene" id=1]
 [ext_resource path="res://door/door.tscn" type="PackedScene" id=2]
@@ -57,6 +57,7 @@
 [ext_resource path="res://misc2/flask2/flask2.tscn" type="PackedScene" id=55]
 [ext_resource path="res://misc2/plates/plates.tscn" type="PackedScene" id=56]
 [ext_resource path="res://pause_menu/pause_menu.tscn" type="PackedScene" id=57]
+[ext_resource path="res://hurt_area/hurt_area.tscn" type="PackedScene" id=58]
 
 [sub_resource type="GDScript" id=3]
 script/source = "extends CanvasLayer
@@ -151,6 +152,9 @@ material = SubResource( 7 )
 
 [node name="CollisionShape2D" parent="Entities/Table/Burner" index="1"]
 position = Vector2( -22, 48 )
+
+[node name="HurtArea" parent="Entities/Table/Burner" instance=ExtResource( 58 )]
+position = Vector2( 295, 123 )
 
 [node name="DoorPlayersOffice" parent="Entities" instance=ExtResource( 22 )]
 position = Vector2( 656, 450 )

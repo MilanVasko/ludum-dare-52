@@ -1,5 +1,8 @@
 extends KinematicBody2D
 
+export(Color) var hurt_color: Color
+onready var hurt_color_timer := $HurtColorTimer
+
 onready var footsteps = $Footsteps
 var door_keys := {}
 
@@ -20,9 +23,16 @@ func _ready() -> void:
 func _hurt(amount: float) -> void:
 	health -= amount
 	get_tree().call_group("health_subscriber", "_on_health_changed", health)
+	change_color()
 	health_regenerate_cooldown = Global.player_health_regenerate_cooldown
 	if health <= 0.0:
 		die()
+
+func change_color() -> void:
+	hurt_color_timer.start()
+	self.modulate = hurt_color
+	yield(hurt_color_timer, "timeout")
+	self.modulate = Color.white
 
 func die() -> void:
 	get_tree().call_group("health_subscriber", "_on_player_died")

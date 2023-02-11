@@ -361,6 +361,7 @@ tracks/13/keys = {
 
 [node name="Player" type="KinematicBody2D" groups=["player"]]
 script = ExtResource( 1 )
+hurt_color = Color( 0.47451, 0, 0, 1 )
 
 [node name="Hands" type="Area2D" parent="." groups=["interaction_finished_subscriber"]]
 script = ExtResource( 7 )
@@ -534,6 +535,9 @@ bus = "Footsteps"
 [node name="Footstep6" type="AudioStreamPlayer2D" parent="Footsteps"]
 stream = ExtResource( 18 )
 bus = "Footsteps"
+
+[node name="HurtColorTimer" type="Timer" parent="."]
+wait_time = 0.2
 
 [connection signal="area_entered" from="Hands" to="Hands" method="_on_object_entered"]
 [connection signal="area_exited" from="Hands" to="Hands" method="_on_object_exited"]
