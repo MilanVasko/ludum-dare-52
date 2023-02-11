@@ -26,10 +26,11 @@ func _use(caller: Node2D) -> void:
 		get_tree().call_group("popup_subscriber", "_on_popup_show", locked_popup_id)
 
 func open() -> void:
-	$Opened.play()
 	$CollisionShape2D.disabled = true
 	sprite_closed.hide()
 	if should_break_on_open:
+		$Broken.play()
 		sprite_broken.show()
 	else:
+		$Opened.play()
 		sprite_opened.show()

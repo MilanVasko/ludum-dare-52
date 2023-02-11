@@ -1,4 +1,4 @@
-[gd_resource type="AudioBusLayout" load_steps=5 format=2]
+[gd_resource type="AudioBusLayout" load_steps=6 format=2]
 
 [sub_resource type="AudioEffectCompressor" id=5]
 resource_name = "Compressor"
@@ -6,6 +6,10 @@ gain = 3.9
 
 [sub_resource type="AudioEffectDistortion" id=6]
 resource_name = "Distortion"
+
+[sub_resource type="AudioEffectAmplify" id=7]
+resource_name = "Amplify"
+volume_db = 8.0
 
 [sub_resource type="AudioEffectReverb" id=2]
 resource_name = "Reverb"
@@ -140,3 +144,11 @@ bus/19/mute = false
 bus/19/bypass_fx = false
 bus/19/volume_db = 5.22674
 bus/19/send = "Sounds"
+bus/20/name = "DoorBroken"
+bus/20/solo = false
+bus/20/mute = false
+bus/20/bypass_fx = false
+bus/20/volume_db = 0.0
+bus/20/send = "Sounds"
+bus/20/effect/0/effect = SubResource( 7 )
+bus/20/effect/0/enabled = true
