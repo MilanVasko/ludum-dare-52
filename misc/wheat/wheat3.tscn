@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://misc/wheat/wheat3.tres" type="Texture" id=1]
+
+[node name="Wheat3" type="Node2D"]
+scale = Vector2( 0.8, 0.8 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -4.76837e-07, -67.2813 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 1 )

@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=2]
+[gd_scene load_steps=68 format=2]
 
 [ext_resource path="res://hud/hud.tscn" type="PackedScene" id=1]
 [ext_resource path="res://door/door.tscn" type="PackedScene" id=2]
@@ -58,6 +58,8 @@
 [ext_resource path="res://misc2/plates/plates.tscn" type="PackedScene" id=56]
 [ext_resource path="res://pause_menu/pause_menu.tscn" type="PackedScene" id=57]
 [ext_resource path="res://hurt_area/hurt_area.tscn" type="PackedScene" id=58]
+[ext_resource path="res://misc/wheat/wheat2.tscn" type="PackedScene" id=59]
+[ext_resource path="res://misc/wheat/wheat3.tscn" type="PackedScene" id=60]
 
 [sub_resource type="GDScript" id=3]
 script/source = "extends CanvasLayer
@@ -120,8 +122,8 @@ position = Vector2( -998, 745 )
 [node name="Papers" parent="Entities/Table2" instance=ExtResource( 31 )]
 position = Vector2( -27.5089, -145 )
 
-[node name="Wheat" parent="Entities/Table2" instance=ExtResource( 37 )]
-position = Vector2( 17.5, -89.1167 )
+[node name="Wheat2" parent="Entities/Table2" instance=ExtResource( 59 )]
+position = Vector2( 18, -95 )
 
 [node name="MeasuringCup" parent="Entities/Table2" instance=ExtResource( 42 )]
 position = Vector2( -47.5089, -128.777 )
@@ -397,11 +399,11 @@ position = Vector2( 42.1899, -71.85 )
 [node name="Wheat" parent="Entities/Storage" instance=ExtResource( 37 )]
 position = Vector2( -2010.23, 1266.61 )
 
-[node name="Wheat2" parent="Entities/Storage" instance=ExtResource( 37 )]
-position = Vector2( -1915.78, 1266.61 )
+[node name="Wheat2" parent="Entities/Storage" instance=ExtResource( 59 )]
+position = Vector2( -1910, 1263 )
 
-[node name="Wheat3" parent="Entities/Storage" instance=ExtResource( 37 )]
-position = Vector2( -1818.95, 1265.82 )
+[node name="Wheat3" parent="Entities/Storage" instance=ExtResource( 60 )]
+position = Vector2( -1808, 1264 )
 
 [node name="WendingMachine" parent="Entities" instance=ExtResource( 27 )]
 position = Vector2( 616.8, -505 )
