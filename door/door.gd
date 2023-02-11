@@ -1,10 +1,12 @@
 extends Node2D
 
+export(bool) var should_break_on_open: bool
 export(String) var locked_with: String
 export(String) var locked_popup_id: String
 export(String) var unlocked_popup_id: String
 onready var sprite_closed := $HighlightedSprite
 onready var sprite_broken := $BrokenSprite
+onready var sprite_opened := $OpenedSprite
 
 func _on_player_entered() -> void:
 	sprite_closed.highlight()
@@ -27,4 +29,7 @@ func open() -> void:
 	$Opened.play()
 	$CollisionShape2D.disabled = true
 	sprite_closed.hide()
-	sprite_broken.show()
+	if should_break_on_open:
+		sprite_broken.show()
+	else:
+		sprite_opened.show()

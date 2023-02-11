@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://door/door.gd" type="Script" id=1]
 [ext_resource path="res://door/door1.png" type="Texture" id=2]
@@ -9,6 +9,8 @@
 [ext_resource path="res://door/opened.wav" type="AudioStream" id=7]
 [ext_resource path="res://highlighted_sprite/highlighted_sprite.tscn" type="PackedScene" id=8]
 [ext_resource path="res://highlighted_sprite/highlighted_sprite.gdshader" type="Shader" id=9]
+[ext_resource path="res://door/door_broken.png" type="Texture" id=10]
+[ext_resource path="res://door/door_opened.png" type="Texture" id=11]
 
 [sub_resource type="ShaderMaterial" id=2]
 resource_local_to_scene = true
@@ -27,6 +29,19 @@ material = SubResource( 2 )
 position = Vector2( 0, -91.6 )
 scale = Vector2( -0.25, 0.25 )
 texture = ExtResource( 2 )
+
+[node name="BrokenSprite" type="Sprite" parent="."]
+visible = false
+position = Vector2( 4.80201e-06, -91.1059 )
+rotation = 3.14159
+scale = Vector2( 0.25, -0.244922 )
+texture = ExtResource( 10 )
+
+[node name="OpenedSprite" type="Sprite" parent="."]
+visible = false
+position = Vector2( 0, -91.6 )
+scale = Vector2( -0.25, 0.25 )
+texture = ExtResource( 11 )
 
 [node name="RandomSprite" type="Node" parent="."]
 script = ExtResource( 3 )
